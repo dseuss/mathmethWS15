@@ -1,0 +1,40 @@
+\ProvidesPackage{mm_ws15}
+
+%% Setup the style
+\usepackage[top=2cm]{geometry}
+\usepackage{fontspec}
+\setsansfont{Helvetica Light}
+\setkomafont{section}{\large}
+
+% Section numbering in left margin
+\renewcommand*{\othersectionlevelsformat}[1]{%
+  \makebox[0pt][r]{%
+  \csname the#1\endcsname\enskip}%
+}
+
+%% Load additional packages
+\usepackage{bm}% bold math
+\usepackage{xspace}
+\usepackage{hyperref}
+\usepackage{tikz}
+
+%% Only referenced equations are numbered
+\usepackage{mathtools}
+\mathtoolsset{showonlyrefs=true}
+
+%% use \[ ... \] for displayed equations
+\newcommand{\myequation}{\begin{equation}}
+\newcommand{\myendequation}{\end{equation}}
+\let\[\myequation{}
+\let\]\myendequation{}
+
+%% Print the title
+\renewcommand{\maketitle}{%
+    \noindent
+    \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}l@{}}
+      \textbf{\textsf{\Large Mathematische Methoden}} & Institut für Theoretische Physik \\
+      Wintersemester 2015/16 & Johannes Berg, Daniel Suess \\
+      \sheetTitle & 
+    \end{tabular*}
+    \vspace{.2em}\hrule
+}
