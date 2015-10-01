@@ -1,5 +1,6 @@
 \documentclass[11pt]{scrartcl}
 \usepackage{mm_ws15}
+\usetikzlibrary{patterns}
 
 \newcommand{\sheetTitle}{Blatt 0}
 \begin{document}
@@ -41,15 +42,6 @@ Wenn möglich, untermalen Sie die Aussagen mit geeigneten Beispielen.
   Was ist ein Venn-Diagramm?
   \item[Abbildungen] Definieren Sie die Begriffe injektive, bijektive und surjektive Abbildung. 
   Wann sind zwei Mengen gleichmächtig?
-  Welche der folgenden Mengen sind gleichmächtig zu einer Teilmenge von $\NN$?\footnote{%
-    Solche Mengen nennt man \emph{abzählbar}.
-    Damit verallgemeinert der Begriff der Mächtigkeit die Zahl der Elemente bei endlichen Mengen auf beliebige Mengen.
-  } 
-  \begin{subex*}
-    \item $A = \{ \mathrm{Schere}, \mathrm{Stein}, \mathrm{Papier} \}$
-    \item $\NN^2$
-  \end{subex*}  
-
   \item[Vektorraum] Beschreiben sie kurz den Begriff des Vektorraumes. 
   Welche physikalische Größen werden durch Vektoren beschrieben und warum?
   \item[Lineare Unabhängigkeit] Was versteht man unter linearer Unabhängigkeit einer Menge von Vektoren? 
@@ -101,49 +93,69 @@ Der Rest dieses Blattes enthält eine Beispielübung mit Musterlösung und soll 
 \end{solution}
 
 
-\section{Vektorraum der reellen Funktionen}
-Sei $\mathcal{F} := \{f:\mathbb{R}\to \mathbb{R}, x\mapsto f(x)\}$ die Menge der reellen Funktionen. Zeigen Sie, dass $(\mathcal{F}, +, \cdot)$ ein reeller Vektorraum ist, wobei Addition und Multiplikation mit einem Skalar punktweise definiert werden\footnote{%
-  Beachten Sie, dass die Operationen auf der rechten Seite wohldefiniert sind. 
-  Um welches \quotes{$+$} handelt es sich bei $f(x) + g(x)$, um welches \quotes{$\cdot$} in $a \cdot f(x)$?
-}
-\begin{align*}
-  +\colon  \mathcal{F} \times \mathcal{F} \to  \mathcal{F}, (f, g) \mapsto f+g & \quad\mbox{mit}\quad \bigl(f+g\bigr) (x) := f(x) + g(x)\\
-  \cdot\colon  \RR \times \mathcal{F} \to  \mathcal{F}, (a, f) \mapsto a \cdot f & \quad\mbox{mit}\quad \bigl(a \cdot f\bigr) (x) := a \cdot f(x)
-\end{align*}
+\section{Abzählbarkeit von Mengen}
+Häufig hat man es in der Mathematik mit unendlichen Mengen zu tun.
+Um dennoch die Größe von zwei Mengen vergleichen zu können, wurde in der Vorlesung der Begriff der \emph{Gleichmächtigkeit} eingeführt.
 
+Eine wichtige Familie von Mengen sind die \emph{abzählbaren Mengen}:
+Eine Menge heißt abzählbar, wenn sie gleichmächtig zu einer Teilmenge von $\NN$ ist (d.h.\ gleichmächtig zu $\NN$ oder zu einer echten Teilmenge von $\NN$).
+Beweisen Sie, dass die folgenden Mengen abzählbar sind.
+  \begin{subex}
+    \item $A = \{ \mathrm{Schere},\, \mathrm{Stein},\, \mathrm{Papier} \}$
+    \item $G = \{ n \in \NN \vert n \mbox{ gerade} \}$
+  \end{subex}  
 \begin{solution}
-  Um zu zeigen, dass $(\mathcal{F}, +, \cdot)$ ein Vektorraum ist, müssen wir zeigen, dass alle Axiome eines Vektorraums erfüllt sind.
-  Zunächst sehen wir, dass sowohl durch die Addition zweier reeller Funktionen als auch durch die Multiplikation mit einem Skalar wieder eine reelle Funktion entsteht.
-  Die angegeben Operation bilden also tatsächlich nach $\mathcal{F}$ ab.
-  Im folgenden bezeichnen $f,g,h$ beliebige reelle Funktionen, also Element aus $\mathcal{F}$, und $a,b$ beliebige reelle Zahlen.
+  Diese Übungsaufgabe soll dazu dienen, die Technik des \emph{direkten Beweises} zu üben.
+  \begin{subex}
+    \item $A$ ist abzählbar, da $A$ eine endliche Menge ist. 
+    Explizit lautet eine bijektive Abbildung $f\colon \NN_3 \rightarrow A$, die zwischen $\NN_3 = \{1, 2, 3\} \subset \NN$ und $A$ vermittelt
+    \[
+      f(1) = \mathrm{Schere}, \quad f(2) = \mathrm{Stein}, \quad f(3) = \mathrm{Papier}.
+    \]
+  $f$ ist injektiv, da jedem Element aus $\NN_3$ genau ein Element aus $A$ zugeordnet wird.
+  $f$ ist surjektiv, da es für jedes Element aus $x \in A$ ein Element aus $n \in \NN_3$ gibt, sodass $f(n) = x$.
 
-  \begin{enumerate}
-  \item $(\mathcal{F},+)$ bildet eine Gruppe, da folgende drei Eigenschaften erfüllt sind:
-    \begin{enumerate}
-    \item Die Addition von Funktionen ist über die Addition der Funktionswerte definiert. Da die Funktionswerte reelle Zahlen sind und die Addition von reellen Zahlen assoziativ ist, ist die Addition von Funktionen auch \emph{assoziativ},
-      \[
-        [f(x)+g(x)]+h(x) = f(x)+[g(x)+h(x)] \,, \; \textrm{also} \quad (f+g)+h = f+(g+h) \,.
-      \]
-    \item Die Funktion $f_\mathrm{e}$, mit $f_\mathrm{e}(x)=0$ für alle $x$, ist das \emph{Nullelement}, da
-      \[
-        f_\mathrm{e}(x) + f(x) = 0 + f(x) = f(x) \,, \; \textrm{also} \quad f_\mathrm{e} + f = f \,.
-      \]
-    \item Das \emph{inverse Element} zu einer Funktion $f$ ist $f_-$, mit $f_-(x) = -f(x)$, da
-      \[
-        f(x) + f_-(x) = f(x) + (-f(x)) = 0 = f_\mathrm{e}(x) \,, \; \textrm{also} \quad f + f_- = f_\mathrm{e} \,.
-      \]
-    \end{enumerate}
-  \end{enumerate}
-  Die folgenden Eigenschaften gelten auch jeweils, da die Verknüpfungsregeln $+$ und $\cdot$ über Addition der Funktionswerte bzw.\ Multiplikation der Funktionswerte mit Skalaren, also jeweils Addition und Mulitiplikation von reellen Zahlen (für welche die jeweiligen Eigenschaften bekannt sind), definiert sind.
-  \begin{enumerate}
-    \stepcounter{enumi}
-    \item \( f(x) + g(x) = g(x) + f(x) \,, \; \textrm{also} \quad f + g = g + f \)
-    \item \( (a + b) f(x)  = a f(x) + b f(x) \,, \; \textrm{also} \quad (a+b) \cdot f = a \cdot f + b \cdot f \)
-    \item \( a [b f(x)] = [ab] f(x) \,, \; \textrm{also} \quad a \cdot [ b \cdot f ] = [ab] \cdot f \)
-    \item \( a [f(x) + g(x)] = a f(x) + a g(x) \,, \; \textrm{also} \quad a \cdot [f + g] = a \cdot f + a \cdot g \)
-    \item \( 1 f(x) = f(x) \,, \; \textrm{also} \quad 1 \cdot f = f \)
-  \end{enumerate}
+  \item Klar ist, dass $G$ eine unendliche Menge ist. 
+  Eine Mögliche Abzählung $f$ lautet
+  \[
+    f\colon \NN \rightarrow G, n \mapsto f(n) = 2n.
+  \]
+  Natürlich hat jede gerade Zahl eine solche Darstellung.
+  Mit anderen Worten: $f$ ist surjektiv.
+  Andererseits wird jedem $n \in \NN$ genau ein Element aus $G$ zugeordnet, also ist $f$ injektiv.
+  Dies sieht man noch deutlicher an folgendem Bild:
+
+  \begin{center}
+    \begin{tikzpicture}[%
+      element/.style={circle,draw,fill=white,minimum size=10},
+      noelement/.style={circle,draw,pattern=north east lines,minimum size=10}
+    ]
+      \node (N) at (0, 2) {$\NN$};
+      \node (G) at (0, 0) {$G$};
+      \draw[->,shorten >= 10pt, shorten <= 10pt] (N) -- node[left] {$f$} ++ (G);
+
+      \foreach \n in {1,...,4}{%
+        \pgfmathtruncatemacro{\label}{2*\n - 1}
+        \node [noelement]  (u\label) at (2*\n - 1,0) {\label};
+        \node [element]  (o\label) at (2*\n - 1,2) {\label};
+      } 
+      \foreach \n in {1,...,4}{%
+        \pgfmathtruncatemacro{\label}{2*\n}
+        \node [element]  (u\label) at (2*\n,0) {\label};
+        \node [element]  (o\label) at (2*\n,2) {\label};
+
+      \draw[|->,shorten >= 10pt, shorten <= 10pt] (o\n) -- (u\label);
+
+      } 
+
+      \node at (9, 2) {$\ldots$};
+      \node at (9, 0) {$\ldots$};
+
+    \end{tikzpicture}
+  \end{center}
+
+  Das heißt, dass obwohl $G$ eine echte Teilmenge von $\NN$ ist, sind beide dennoch gleichmächtig --  eine Besonderheit von unendlichen Mengen.
+  \end{subex}
 \end{solution}
-
 
 \end{document}

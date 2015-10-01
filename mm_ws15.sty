@@ -1,7 +1,7 @@
 \ProvidesPackage{mm_ws15}
 
 %% Setup the style
-\usepackage[top=2cm]{geometry}
+\usepackage[top=2cm,bottom=2.5cm]{geometry}
 \usepackage{ifpdf,ifxetex,ifluatex} 
 \setlength{\parindent}{0pt}
 
@@ -54,9 +54,11 @@
     frametitle={\colorbox{white}{\,{\normalfont \textit{Lösung}}\,}},
     frametitleaboveskip=-\ht\strutbox,
     frametitlealignment=\raggedright
-  }%
+  }
   \begin{mdframed}[style=solutionstyle]
-  }{\end{mdframed}}
+  }{%
+  \end{mdframed}
+  }
 
 \newenvironment{remark}[1]{%
     \subsection*{#1}}{}
