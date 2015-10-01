@@ -1,0 +1,149 @@
+\documentclass[11pt]{scrartcl}
+\usepackage{mm_ws15}
+
+\newcommand{\sheetTitle}{Blatt 0}
+\begin{document}
+\maketitle
+
+\section*{Hinweise zum Übungsbetrieb}
+\begin{itemize}
+  \item Homepage zur Übung: \url{http://thp.uni-koeln.de/~dsuess/ws15/}
+  \item Die \emph{Übungsaufgaben} werden immer montags in der Vorlesung ausgegeben und auf oben genannter Seite zum Download zur Verfügung gestellt. Die \emph{Abgabe der Lösung} erfolgt eine Woche später \emph{bis spätestens ???} in die Briefkästen vor dem Institut für Theoretische Physik (im Altbau).
+  \item Heften Sie alle Blätter in der richtigen Reihenfolge zusammen und schreiben Sie Ihren Namen, die Nummer Ihrer Übungsgruppe und den Namen des Übungsgruppenleiters bzw. der Übungsgruppenleiterin auf die erste Seite. 
+  \item Jede Teilnehmerin und jeder Teilnehmer dieser Vorlesung gibt eine eigene Version der Lösung ab. Wir ermuntern Sie ausdrücklich dazu, die Aufgaben in kleineren Gruppen zu bearbeiten und über möglichen Lösungswege zu diskutieren. Durch Abschreiben der Lösung von Ihren Kommilitonen und Kommilitoninnen geht Ihnen ein wichtiger Teil der Vorlesung verloren.
+  \item Wenn Sie Schwierigkeiten mit dem Stoff haben und etwas nicht verstehen, versuchen Sie, diese Probleme umgehend zu beheben. Teile der Vorlesung bauen meist auf Vorangegangenes auf und Wissenslücken werden im Laufe des Semester immer schwieriger zu füllen sein. Anlaufstellen bei Fragen (in der Reihenfolge, wie sie auch aufgesucht werden sollten): Ihre Kommilitonen/Kommilitoninnen, die Übungen, der Lesende nach der Vorlesung, etc.
+  \item Zusätzlich haben wir für Sie einen Diskussionsbereich online eingerichtet, wo Sie mögliche Fragen jeder Zeit stellen (und auch beantworten) können. Diesen erreichen Sie unter \url{http://mathematische-methoden-ws15.wikispaces.com/}
+\end{itemize}
+
+
+\section*{Vorwissen}
+Sie sollten mit den folgenden mathematischen Begriffen und Techniken aus der Schule vertraut sein. Falls nicht, sollten Sie dieses Defizit umgehend beheben.
+\begin{itemize}
+  \item Bruchrechnung
+  \item Umstellung von Gleichung, Lösung von linearen Gleichungssystemen
+  \item trigonometrischen Funktionen (z.B. Definition, Additionstheoreme, \ldots)
+  \item Rechenregeln für Potenzfunktionen und Logarithmusfunktionen
+  \item Differentialrechnung (Bedeutung und Definition der Ableitung, Ableitung elementarer Funktionen, Ableitungsregeln)
+  \item Integralrechnung (bestimmte/unbestimmte Integration, Integrale elementarer Funktionen)
+\end{itemize}
+\vspace{1em}
+
+Die folgende Aufgabe soll als Vorbereitung für die erste Übung am ??? dienen.
+Wiederholen Sie die folgenden Begriffe mithilfe des 0.\ Kapitels der Vorlesung und der angegebenen Literatur (siehe Homepage der Vorlesung).
+Beschäftigen Sie sich außerdem mit den unter \quotes{Vorwissen} angeführten Begriffen.
+
+\section*{Aufgaben zur Vorbereitung}
+Geben Sie zu jedem Begriff eine kurze Definition in eigenen Worten.
+Wenn möglich, untermalen Sie die Aussagen mit geeigneten Beispielen.
+
+\begin{description}[leftmargin=1cm,labelindent=1cm]
+  \item[Mengen] Wie sind Teilmenge, Vereinigungsmenge, Schnittmenge und Produktmenge definiert?
+  Was ist ein Venn-Diagramm?
+  \item[Abbildungen] Definieren Sie die Begriffe injektive, bijektive und surjektive Abbildung. 
+  Wann sind zwei Mengen gleichmächtig?
+  Welche der folgenden Mengen sind gleichmächtig zu einer Teilmenge von $\NN$?\footnote{%
+    Solche Mengen nennt man \emph{abzählbar}.
+    Damit verallgemeinert der Begriff der Mächtigkeit die Zahl der Elemente bei endlichen Mengen auf beliebige Mengen.
+  } 
+  \begin{subex*}
+    \item $A = \{ \mathrm{Schere}, \mathrm{Stein}, \mathrm{Papier} \}$
+    \item $\NN^2$
+  \end{subex*}  
+
+  \item[Vektorraum] Beschreiben sie kurz den Begriff des Vektorraumes. 
+  Welche physikalische Größen werden durch Vektoren beschrieben und warum?
+  \item[Lineare Unabhängigkeit] Was versteht man unter linearer Unabhängigkeit einer Menge von Vektoren? 
+  Wann spricht man von einem Erzeugendensystem, wann von einer Basis? 
+  \item[Stetigkeit und Differenzierbarkeit] Wann ist eine Funktion stetig, wann differenzierbar? 
+  Impliziert Differenzierbarkeit auch Stetigkeit? 
+  Geben Sie ein Beispiel und ein Gegenbeispiel an.
+\end{description}
+
+\sepline[.75\textwidth]
+
+Der Rest dieses Blattes enthält eine Beispielübung mit Musterlösung und soll die Herangehensweise an typische Aufgaben illustrieren und beispielhaft zeigen, wie eine mögliche Darstellung der Lösung aussehen kann. 
+
+\section{Elementare Rechenoperationen mit Vektoren}
+\begin{subex}
+  \item Berechnen Sie $\vec{a} + \vec{b}$, $\vec{a} - \vec{b}$, $5 \vec{a}$ und $3 \vec{a} + (-2) \vec{b}$ für $\vec{a} = \colvec{3 \\ 1}$ und $\vec{b} = \colvec{ -1 \\ 2 }$.
+  \item Drücken Sie $\vec{a} = \colvec{ 1 \\ 3 }$ als Linearkombination von $\vec{e}_1 = \colvec{ 2 \\ 1 }$ und $\vec{e}_2 = \colvec{ 1 \\ -1 }$ aus.
+\end{subex}
+
+\begin{solution}
+  \begin{subex}
+  \item Addition und Subtraktion von Vektoren werden komponentenweise ausgeführt
+  \[
+    \vec{a} + \vec{b} = \colvec{ 3 \\ 1 } + \colvec{ -1 \\ 2 } = \colvec{ 3 + (-1) \\ 1 + 2 } = \colvec{ 2 \\ 3 }
+  \]
+  \[
+    \vec{a} - \vec{b} = \colvec{ 3 \\ 1 } - \colvec{ -1 \\ 2 } = \colvec{ 3 - (-1) \\ 1 - 2 } = \colvec{ 4 \\ -1 }
+  \]
+  Multiplikation von Vektoren mit reellen Zahlen ebenso
+  \[
+    5 \vec{a} = 5 \colvec{ 3 \\ 1 } = \colvec{ 5 \cdot 3 \\ 5 \cdot 1 } = \colvec{ 15 \\ 5 }
+  \]
+  Nacheinanderausführung von Multiplikation und Addition (Distributivgesetz), ebenfalls komponentenweise
+  \[
+    3 \vec{a} + (-2) \vec{b} = \colvec{ 3 \cdot 3 \\ 3 \cdot 1 } + \colvec{ -2 \cdot (-1) \\ -2 \cdot 2 }
+    = \colvec{ 9 \\ 3 } + \colvec{ 2 \\ -4 } = \colvec{ 11 \\ -1 }
+  \]
+
+  \item Stelle $\vec{a}$ als Linearkombination $x\cdot \vec{e}_1 + y\cdot \vec{e}_2$ dar, wobei die Koeffizienten $x,y \in \RR$ zunächst unbestimmt sind
+  \[
+    \vec{a} \stackrel{!}{=} x \cdot \vec{e}_1 + y \cdot \vec{e}_2
+  \]
+  Einsetzen liefert zwei Gleichungen für die Komponenten und somit ein lineares Gleichungssystem, das wir wie gewohnt lösen
+  \begin{align*}
+    \left\{ \begin{array}{l}1 = 2x + y \\  3 = x - y \end{array} \right. \quad [\,\,\rightarrow \mathrm{I + II}] \quad \left\{ \begin{array}{l}1 = 2x + y  \\  4 = 3x \end{array} \right.
+  \end{align*}
+  Ablesen und Rückeinsetzen liefert $x = \frac{4}{3}$, $y = 1 - 2x = -\frac{5}{3}$, also gilt $\vec{a} = \frac{4}{3}\cdot\vec{e}_1 - \frac{5}{3}\cdot \vec{e}_2$.
+  \end{subex}
+\end{solution}
+
+
+\section{Vektorraum der reellen Funktionen}
+Sei $\mathcal{F} := \{f:\mathbb{R}\to \mathbb{R}, x\mapsto f(x)\}$ die Menge der reellen Funktionen. Zeigen Sie, dass $(\mathcal{F}, +, \cdot)$ ein reeller Vektorraum ist, wobei Addition und Multiplikation mit einem Skalar punktweise definiert werden\footnote{%
+  Beachten Sie, dass die Operationen auf der rechten Seite wohldefiniert sind. 
+  Um welches \quotes{$+$} handelt es sich bei $f(x) + g(x)$, um welches \quotes{$\cdot$} in $a \cdot f(x)$?
+}
+\begin{align*}
+  +\colon  \mathcal{F} \times \mathcal{F} \to  \mathcal{F}, (f, g) \mapsto f+g & \quad\mbox{mit}\quad \bigl(f+g\bigr) (x) := f(x) + g(x)\\
+  \cdot\colon  \RR \times \mathcal{F} \to  \mathcal{F}, (a, f) \mapsto a \cdot f & \quad\mbox{mit}\quad \bigl(a \cdot f\bigr) (x) := a \cdot f(x)
+\end{align*}
+
+\begin{solution}
+  Um zu zeigen, dass $(\mathcal{F}, +, \cdot)$ ein Vektorraum ist, müssen wir zeigen, dass alle Axiome eines Vektorraums erfüllt sind.
+  Zunächst sehen wir, dass sowohl durch die Addition zweier reeller Funktionen als auch durch die Multiplikation mit einem Skalar wieder eine reelle Funktion entsteht.
+  Die angegeben Operation bilden also tatsächlich nach $\mathcal{F}$ ab.
+  Im folgenden bezeichnen $f,g,h$ beliebige reelle Funktionen, also Element aus $\mathcal{F}$, und $a,b$ beliebige reelle Zahlen.
+
+  \begin{enumerate}
+  \item $(\mathcal{F},+)$ bildet eine Gruppe, da folgende drei Eigenschaften erfüllt sind:
+    \begin{enumerate}
+    \item Die Addition von Funktionen ist über die Addition der Funktionswerte definiert. Da die Funktionswerte reelle Zahlen sind und die Addition von reellen Zahlen assoziativ ist, ist die Addition von Funktionen auch \emph{assoziativ},
+      \[
+        [f(x)+g(x)]+h(x) = f(x)+[g(x)+h(x)] \,, \; \textrm{also} \quad (f+g)+h = f+(g+h) \,.
+      \]
+    \item Die Funktion $f_\mathrm{e}$, mit $f_\mathrm{e}(x)=0$ für alle $x$, ist das \emph{Nullelement}, da
+      \[
+        f_\mathrm{e}(x) + f(x) = 0 + f(x) = f(x) \,, \; \textrm{also} \quad f_\mathrm{e} + f = f \,.
+      \]
+    \item Das \emph{inverse Element} zu einer Funktion $f$ ist $f_-$, mit $f_-(x) = -f(x)$, da
+      \[
+        f(x) + f_-(x) = f(x) + (-f(x)) = 0 = f_\mathrm{e}(x) \,, \; \textrm{also} \quad f + f_- = f_\mathrm{e} \,.
+      \]
+    \end{enumerate}
+  \end{enumerate}
+  Die folgenden Eigenschaften gelten auch jeweils, da die Verknüpfungsregeln $+$ und $\cdot$ über Addition der Funktionswerte bzw.\ Multiplikation der Funktionswerte mit Skalaren, also jeweils Addition und Mulitiplikation von reellen Zahlen (für welche die jeweiligen Eigenschaften bekannt sind), definiert sind.
+  \begin{enumerate}
+    \stepcounter{enumi}
+    \item \( f(x) + g(x) = g(x) + f(x) \,, \; \textrm{also} \quad f + g = g + f \)
+    \item \( (a + b) f(x)  = a f(x) + b f(x) \,, \; \textrm{also} \quad (a+b) \cdot f = a \cdot f + b \cdot f \)
+    \item \( a [b f(x)] = [ab] f(x) \,, \; \textrm{also} \quad a \cdot [ b \cdot f ] = [ab] \cdot f \)
+    \item \( a [f(x) + g(x)] = a f(x) + a g(x) \,, \; \textrm{also} \quad a \cdot [f + g] = a \cdot f + a \cdot g \)
+    \item \( 1 f(x) = f(x) \,, \; \textrm{also} \quad 1 \cdot f = f \)
+  \end{enumerate}
+\end{solution}
+
+
+\end{document}

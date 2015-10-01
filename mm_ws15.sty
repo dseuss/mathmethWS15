@@ -2,21 +2,81 @@
 
 %% Setup the style
 \usepackage[top=2cm]{geometry}
-\usepackage{fontspec}
-\setsansfont{Helvetica Light}
+\usepackage{ifpdf,ifxetex,ifluatex} 
+\setlength{\parindent}{0pt}
+
+\ifxetex
+    \usepackage{fontspec}
+    \setsansfont{Helvetica Light}
+\else
+    \usepackage[utf8]{inputenc}
+\fi
 \setkomafont{section}{\large}
 
 % Section numbering in left margin
-\renewcommand*{\othersectionlevelsformat}[1]{%
-  \makebox[0pt][r]{%
-  \csname the#1\endcsname\enskip}%
+% \renewcommand*{\othersectionlevelsformat}[1]{%
+%  \makebox[0pt][r]{%
+%  \csname the#1\endcsname\enskip}%
+%}
+
+\usepackage{titlesec}
+%\titlespacing{command}{left spacing}{before spacing}{after spacing}
+\titlespacing{\section}{0em}{2em plus 5em minus 0em}{1em}
+
+\titleformat{\section}[runin]
+  {\normalfont\large\bfseries}{\thesection}{.5em}{}
+\titleformat{\subsection}[runin]
+  {\normalfont\normal\bfseries}{\alph{subsection}}{.3em}{}
+
+\newenvironment{subex}
+    {%
+    \begin{enumerate}[label=\textbf{\alph*)}] 
+    }
+    { 
+    \end{enumerate}
+    }
+\newenvironment{subex*}
+    {%
+    \begin{enumerate*}[label=\textbf{\alph*)}] 
+    }
+    { 
+    \end{enumerate*}
+    }
+
+%% For solutions
+\usepackage{mdframed}
+\global\mdfdefinestyle{solutionstyle}{%
+  linecolor=lightgray,linewidth=1pt,%
+  leftmargin=0cm,rightmargin=0cm
 }
+
+\newenvironment{solution}{%
+  \mdfsetup{%
+    frametitle={\colorbox{white}{\,{\normalfont \textit{Lösung}}\,}},
+    frametitleaboveskip=-\ht\strutbox,
+    frametitlealignment=\raggedright
+  }%
+  \begin{mdframed}[style=solutionstyle]
+  }{\end{mdframed}}
+
+\newenvironment{remark}[1]{%
+    \subsection*{#1}}{}
 
 %% Load additional packages
 \usepackage{bm}% bold math
 \usepackage{xspace}
 \usepackage{hyperref}
 \usepackage{tikz}
+\usepackage[inline]{enumitem}
+\setitemize{itemsep=0em}
+\setlist{topsep=.2em}
+\setlist[description]{font={\normalfont\bfseries}}
+
+
+\usepackage[ngerman]{babel}
+\usepackage{bm}
+\usepackage{amsmath,amsfonts}
+\usepackage{xifthen}
 
 %% Only referenced equations are numbered
 \usepackage{mathtools}
@@ -38,3 +98,23 @@
     \end{tabular*}
     \vspace{.2em}\hrule
 }
+
+%% Text commands
+\newcommand{\quotes}[1]{\glqq{#1}\grqq}
+\newcommand{\sepline}[1][\textwidth]{%
+    \begin{center}
+        \rule{#1}{.4pt}
+    \end{center}
+}
+
+%% Math commands
+\newcommand{\colvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+% Sets
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+
+
+% Operations
