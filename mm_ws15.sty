@@ -11,45 +11,44 @@
 \else
     \usepackage[utf8]{inputenc}
 \fi
-\setkomafont{section}{\large}
 
-% Section numbering in left margin
-% \renewcommand*{\othersectionlevelsformat}[1]{%
-%  \makebox[0pt][r]{%
-%  \csname the#1\endcsname\enskip}%
-%}
+\RedeclareSectionCommand[
+  afterskip=-1em,
+  font=\large\normalfont\bfseries
+]{section}
 
-\usepackage{titlesec}
-%\titlespacing{command}{left spacing}{before spacing}{after spacing}
-\titlespacing{\section}{0em}{2em plus 5em minus 0em}{1em}
 
-\titleformat{\section}[runin]
-  {\normalfont\large\bfseries}{\thesection}{.5em}{}
-\titleformat{\subsection}[runin]
-  {\normalfont\normal\bfseries}{\alph{subsection}}{.3em}{}
+%% Load additional packages
+\usepackage{bm}% bold math
+\usepackage{xspace}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{mdframed}
+\usepackage[inline]{enumitem}
+\setitemize{itemsep=0em}
+\setlist{topsep=.2em}
+\setlist[description]{font={\normalfont\bfseries}}
 
-\newenvironment{subex}
-    {%
-    \begin{enumerate}[label=\textbf{\alph*)}] 
-    }
-    { 
+
+\usepackage[ngerman]{babel}
+\usepackage{bm}
+\usepackage{amsmath,amsfonts}
+\usepackage{xifthen}
+
+%% Custom environments
+\newenvironment{subex}{%
+    \begin{enumerate}[label=\textbf{\alph*)}]}{% 
     \end{enumerate}
     }
-\newenvironment{subex*}
-    {%
-    \begin{enumerate*}[label=\textbf{\alph*)}] 
-    }
-    { 
+\newenvironment{subex*}{%
+    \begin{enumerate*}[label=\textbf{\alph*)}]}{% 
     \end{enumerate*}
     }
 
-%% For solutions
-\usepackage{mdframed}
 \global\mdfdefinestyle{solutionstyle}{%
   linecolor=lightgray,linewidth=1pt,%
   leftmargin=0cm,rightmargin=0cm
 }
-
 \newenvironment{solution}{%
   \mdfsetup{%
     frametitle={\colorbox{white}{\,{\normalfont \textit{Lösung}}\,}},
@@ -62,31 +61,18 @@
 \newenvironment{remark}[1]{%
     \subsection*{#1}}{}
 
-%% Load additional packages
-\usepackage{bm}% bold math
-\usepackage{xspace}
-\usepackage{hyperref}
-\usepackage{tikz}
-\usepackage[inline]{enumitem}
-\setitemize{itemsep=0em}
-\setlist{topsep=.2em}
-\setlist[description]{font={\normalfont\bfseries}}
-
-
-\usepackage[ngerman]{babel}
-\usepackage{bm}
-\usepackage{amsmath,amsfonts}
-\usepackage{xifthen}
 
 %% Only referenced equations are numbered
 \usepackage{mathtools}
 \mathtoolsset{showonlyrefs=true}
+
 
 %% use \[ ... \] for displayed equations
 \newcommand{\myequation}{\begin{equation}}
 \newcommand{\myendequation}{\end{equation}}
 \let\[\myequation{}
 \let\]\myendequation{}
+
 
 %% Print the title
 \renewcommand{\maketitle}{%
