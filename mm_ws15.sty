@@ -16,6 +16,10 @@
   afterskip=-1em,
   font=\large\normalfont\bfseries
 ]{section}
+\RedeclareSectionCommand[
+  afterskip=-1em,
+  font=\normalfont\bfseries
+]{subsection}
 
 
 %% Load additional packages
@@ -97,7 +101,7 @@
 
 %% Math commands
 \newcommand{\colvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
-\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\mat}[1]{\mathbf{#1}}
 
 % Sets
 \newcommand{\RR}{\mathbb{R}}
@@ -105,4 +109,12 @@
 \newcommand{\QQ}{\mathbb{Q}}
 
 
-% Operations
+% TikZ Fun
+\newcommand{\drawgrid}[4]{%
+  \foreach \x in {#1,...,#2}{%
+    \draw [coordline] (\x,#3-.5) -- (\x,#4+.5);  
+  }
+  \foreach \y in {#3,...,#4}{%
+    \draw [coordline] (#1-.5,\y) -- (#2+.5,\y);  
+  }
+}
