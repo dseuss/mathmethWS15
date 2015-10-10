@@ -9,6 +9,7 @@
 \newcommand{\uu}{\vec{u}}
 \newcommand{\vv}{\vec{v}}
 \newcommand{\ww}{\vec{w}}
+\newcommand{\ee}{\vec{e}}
 
 \begin{document}
 \maketitle
@@ -57,12 +58,13 @@ a \oplus b = \mod_n(a + b).
 \end{subex}
 
 
-\section{Graphische Vektoraddition}
-Die in der unten stehenden Abbildung gezeigten Pfeile $\uu, \vv$ und $\ww$ repräsentieren Vektoren, die hier als Verschiebungen in der Ebene zu interpretieren sind.
-Skizzieren Sie folgende Linearkombinationen:
+\section{Verschiebungen in der Ebene}
+Die in der unten stehenden Abbildung gezeigten Pfeile repräsentieren Vektoren, die hier als Verschiebungen in der Ebene zu interpretieren sind.
 \begin{subex}
-  \item $\uu + \vv$, $\uu + \ww$, $\uu - \vv$, $\uu - \ww$
-  \item $\uu + \vv + \ww -2\ww$, $\frac{1}{2}\uu$, $2\ww + 3(\uu + \vv + \frac{1}{3}\ww)$
+  \item Skizzieren Sie folgende Linearkombinationen: $\uu + \vv$, $\uu - \ww$, $\frac{1}{2}\uu$, $2\ww + 3(\uu + \vv + \frac{1}{3}\ww)$
+  \item Bestimmen Sie die Komponenten $\mat{u}$, $\mat{v}$ und $\mat{w}$ von $\uu$, $\vv$ und $\ww$ bezüglich des Basissystems $(\ee_1, \ee_2)$.
+  \item Bestimmen Sie die Komponenten $\mat{e}_2$ von $\ee_2$ bezüglich des Basissystems $(\ee_1, \ww)$.
+  \item Warum ist $(\ee_1, \uu)$ kein geeignetes Basissystem für alle Verschiebungen in der Ebene? 
 \end{subex}
 \begin{center}
   \begin{tikzpicture}[%
@@ -70,10 +72,13 @@ Skizzieren Sie folgende Linearkombinationen:
     vector/.style={->}
   ]
       
-  \drawgrid{0}{4}{0}{2}
+  \drawgrid{-1}{4}{-1}{2}
   \draw[vector] (1, 0) -- node[above] {$\uu$} ++ (2,0);
   \draw[vector] (3, 2) -- node[above] {$\vv$} ++ (-2,-1);
   \draw[vector] (0, 1) -- node[above left] {$\ww$} ++ (1,1);
+
+  \draw[vector] (-1, -1) -- node[below] {$\ee_1$} ++ (1,0);
+  \draw[vector] (-1, -1) -- node[left] {$\ee_2$} ++ (0,1);
 
   \end{tikzpicture}
 \end{center}
