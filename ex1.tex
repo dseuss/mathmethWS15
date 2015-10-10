@@ -1,5 +1,6 @@
 \documentclass{scrartcl}
 \usepackage{mm_ws15}
+\usepackage{wrapfig}
 
 \newcommand{\permN}{\mathcal{S}_n}
 \renewcommand{\mod}{\operatorname{mod}}
@@ -41,22 +42,59 @@ Diese Schreibweise spiegelt die äquivalente Charakterisierung von $\permN$ als 
 
 
 \section{Modulare Arithmetik}
+
 Die Menge $\NN_n = \{1,\ldots,n\}$ versehen mit der üblichen Addition $+$ von natürlichen Zahlen bildet keine Gruppe.
-Stattdessen definieren die \quotes{Addition modulo $n$} für $a, b \in \NN_n$
+Stattdessen definieren wir die \quotes{Addition modulo $n$} für $a, b \in \NN_n$
 \[
-a \oplus b = \mod_n(a + b).
+  a \oplus b = \mod_n(a + b).
 \]
-\emph{TODO: Erkläre Modulo-Operation, Zeichnung Zahlengerade -> Kreis, Beispiele}
+Für festes $n \in \NN$ ordnet die Modulo-Operation jeder natürlichen Zahl $a \in \NN$ den ganzzahligen Rest der Division $a / n$ zu.
+Mit anderen Worten: für jedes $a \in \NN$ existiert genau ein $k \in \{0, 1, \ldots \}$ und $\mod_n(a) \in \NN_n$, sodass
+\[
+  a = k \times n + \mod_n(a).
+\]
+
+Diese Konstruktion kann man sich für $n=7$ an untenstehender Abbildung vor Augen führen.
+Die außerhalb des Kreises aufgetragenen Zahlen erhält man durch \quotes{Aufwickeln} des Zahlenstrahls der natürlichen Zahlen:
+Im Ursprung des Zahlenstrahls bei 1 startend geht man $n$ Schritte auf dem Zahlenstrahl vorwärts und identifiziert die Punkte ($1$, $n+1$), ($2$, $n+2$) usw.
+Dieses Konstruktion wiederholt man immer wieder nach $n$ Schritten -- man \quotes{wickelt} also Segmente der Länge $n$ des Zahlenstrahls übereinander.
+
+Das Ergebnis von $\mod_n(a)$ ist dann die Zahl in $\{1,\ldots,n\}$, die man mit $a$ identifiziert hat.
+Im Bild sind diese im Inneren des Kreises aufgetragen.
+Hier noch einige Beispiele:
+\begin{align*}
+  \mod_3(2) = \mod_3(5)=2 = \mod_3(8)= 2 \\
+  \mod_4(2) = 2, \mod_4(5) = 1, \mod_4(8) = 4\\
+  \mod_{10}(17) = 7, \mod_{10}(1321) = 1.
+\end{align*}
+  
 \begin{subex}
   \item Erklären Sie, warum $(\NN_n, +)$ keine Gruppe bildet.
   Ist $(\{0, \ldots, n\},+)$ eine Gruppe?
-  \item Sei $n=10$, berechnen Sie $1 \oplus 2$, $3 \oplus 10$ und $4 \oplus 7$.
+  \item Sei $n=10$, berechnen Sie $1 \oplus 2$, $3 \oplus 10$, $4 \oplus 7$ und $123 \oplus 456$.
   \item Beweisen Sie, dass $(\NN_n,\oplus)$ eine Gruppe ist.
   Was ist das neutrale Element?
   Wie lautet das inverse Element für $a\in\NN_n$?
   \item Mit welcher in der Vorlesung bereits behandelten Gruppe können Sie $(\NN_n,\oplus)$ identifizieren?
 \end{subex}
 
+\begin{center}
+  \begin{tikzpicture}[scale=1.5]
+  \pgfmathsetmacro{\N}{7};
+  \pgfmathsetmacro{\offset}{1.7};
+  \pgfmathsetmacro{\inset}{.7};
+
+
+  \foreach \i in {1,...,\N}{
+    \pgfmathsetmacro{\myphi}{360 / \N * (\i - 1)};
+    \pgfmathsetmacro{\j}{\i + \N}
+
+    \node at (\offset * cos \myphi,\offset * sin \myphi) {${\i}, {\pgfmathparse{\i + \N}\pgfmathprintnumber{\pgfmathresult}}, \ldots$};
+    \node at (\inset * cos \myphi,\inset * sin \myphi) {${\i}$};
+    \draw[-|] (cos \myphi,sin \myphi) arc [start angle=\myphi,end angle=(\myphi + 360 / \N),radius=1cm];
+  }  
+  \end{tikzpicture}
+\end{center}
 
 \section{Verschiebungen in der Ebene}
 Die in der unten stehenden Abbildung gezeigten Pfeile repräsentieren Vektoren, die hier als Verschiebungen in der Ebene zu interpretieren sind.
