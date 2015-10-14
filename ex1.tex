@@ -1,21 +1,24 @@
 \documentclass{scrartcl}
 \usepackage{mm_ws15}
 \usepackage{wrapfig}
+\usepackage{mathrsfs}
+
 
 \newcommand{\permN}{\mathcal{S}_n}
 \renewcommand{\mod}{\operatorname{mod}}
 
-% TODO Insert turn-in date
-\newcommand{\sheetTitle}{Blatt 1, Abgabe ???}
+\newcommand{\sheetTitle}{Blatt 1, Abgabe 26.10.2015 12:00}
 \newcommand{\uu}{\vec{u}}
 \newcommand{\vv}{\vec{v}}
 \newcommand{\ww}{\vec{w}}
 \newcommand{\ee}{\vec{e}}
 
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+
 \begin{document}
 \maketitle
 
-\section{Gruppe der Permutationen}
+\section{Gruppe der Permutationen \points{10}}
 \label{groupperm}
 Als Beispiel für eine Gruppe wurde in der Vorlesung die Gruppe der Permutationen von $n$ Elementen $(\permN{}, \ast)$ genannt.
 Hierbei ist $\permN$ die Menge aller Anordnungen der Menge $\NN_n = \{1,\ldots,n\}$ (der Menge der natürlichen Zahlen von $1$ bis $n$).
@@ -23,14 +26,14 @@ Genauer: $\permN$ ist die Menge der bijektiven (eineindeutigen) Abbildungen von 
 Die Operation $\ast$ ist definiert durch Hintereinanderausführung der Abbildungen aus $\permN$.
 Um die Notation zu vereinfachen werden wir im Weiteren eine Permutation $\sigma \in \permN$ auch als Tupel schreiben $\sigma = (\sigma(1), \sigma(2), \ldots, \sigma(n))$.
 Diese Schreibweise spiegelt die äquivalente Charakterisierung von $\permN$ als Menge aller Anordnungen von $n$ Elementen wider.
-\begin{subex} 
-  \item Für $n=4$ betrachte $\sigma_1 = (2, 4, 1, 3)$, $\sigma_2 = (3, 2, 4 , 1)$ und $\sigma_3 = (2, 1, 3, 2)$.
+\begin{subex}
+  \item\points{3} Für $n=4$ betrachte $\sigma_1 = (2, 4, 1, 3)$, $\sigma_2 = (3, 2, 4 , 1)$ und $\sigma_3 = (2, 1, 3, 2)$.
   Welcher dieser Abbildungen ist keine Permutation?
   Warum?
   Was ist $\sigma_1 \ast \sigma_2$ und $\sigma_2 \ast \sigma_1$?
   Was schlussfolgern Sie daraus für die Gruppe $(\permN,\ast)$?
-  \item Beweisen Sie, dass für beliebiges $n \in \NN$, dass $(\permN,\ast)$ eine Gruppe ist.
-  \item Beschreiben Sie einen Algorithmus (eine explizite Konstruktionsvorschrift) für $\permN$.
+  \item\points{5} Beweisen Sie, dass für beliebiges $n \in \NN$, dass $(\permN,\ast)$ eine Gruppe ist.
+  \item\points{2} Beschreiben Sie einen Algorithmus (eine explizite Konstruktionsvorschrift) für $\permN$.
   Mit anderen Worten: gegeben eine Zahl $n$, wie würden Sie alle Elemente aus $\permN$ finden?
   Benutzen Sie \emph{Ihre eigene} Vorschrift um $\mathcal{S}_3$ zu konstruieren!
 \end{subex}
@@ -41,7 +44,7 @@ Diese Schreibweise spiegelt die äquivalente Charakterisierung von $\permN$ als 
 \end{remark}
 
 
-\section{Modulare Arithmetik}
+\section{Modulare Arithmetik \points{10}}
 
 Die Menge $\NN_n = \{1,\ldots,n\}$ versehen mit der üblichen Addition $+$ von natürlichen Zahlen bildet keine Gruppe.
 Stattdessen definieren wir die \quotes{Addition modulo $n$} für $a, b \in \NN_n$
@@ -54,62 +57,73 @@ Mit anderen Worten: für jedes $a \in \NN$ existiert genau ein $k \in \{0, 1, \l
   a = k \times n + \mod_n(a).
 \]
 
-Diese Konstruktion kann man sich für $n=7$ an untenstehender Abbildung vor Augen führen.
-Die außerhalb des Kreises aufgetragenen Zahlen erhält man durch \quotes{Aufwickeln} des Zahlenstrahls der natürlichen Zahlen:
-Im Ursprung des Zahlenstrahls bei 1 startend geht man $n$ Schritte auf dem Zahlenstrahl vorwärts und identifiziert die Punkte ($1$, $n+1$), ($2$, $n+2$) usw.
-Dieses Konstruktion wiederholt man immer wieder nach $n$ Schritten -- man \quotes{wickelt} also Segmente der Länge $n$ des Zahlenstrahls übereinander.
-
-Das Ergebnis von $\mod_n(a)$ ist dann die Zahl in $\{1,\ldots,n\}$, die man mit $a$ identifiziert hat.
-Im Bild sind diese im Inneren des Kreises aufgetragen.
+Diese Konstruktion kann man sich für $n=5$ an untenstehender Abbildung vor Augen führen.
+Man stelle sich den Zahlenstrahl -- im Bild durch die dicke Linie dargestellt -- so aufgewickelt vor, dass immer $i$, $i + n$, $i + 2n$,\ldots{} auf einem der $n$ gestrichelten Strahlen liegen.
+Das Ergebnis von $\mod_n(i)$ erhält man, indem man dem Strahl durch $i$ bis zu dem Punkt nach innen folgt, der am nächsten zum Ursprung liegt, d.h.\ alle Zahlen, die auf dem gleichen Strahl liegen haben den gleichen Modulo.
+Dieser ist im Bild zur Veranschaulichung eingekreist.
 Hier noch einige Beispiele:
 \begin{align*}
   \mod_3(2) = \mod_3(5)=2 = \mod_3(8)= 2 \\
   \mod_4(2) = 2, \mod_4(5) = 1, \mod_4(8) = 4\\
   \mod_{10}(17) = 7, \mod_{10}(1321) = 1.
 \end{align*}
-  
+
+\newpage
 \begin{subex}
-  \item Erklären Sie, warum $(\NN_n, +)$ keine Gruppe bildet.
+  \item\points{1} Erklären Sie, warum $(\NN_n, +)$ keine Gruppe bildet.
   Ist $(\{0, \ldots, n\},+)$ eine Gruppe?
-  \item Sei $n=10$, berechnen Sie $1 \oplus 2$, $3 \oplus 10$, $4 \oplus 7$ und $123 \oplus 456$.
-  \item Beweisen Sie, dass $(\NN_n,\oplus)$ eine Gruppe ist.
+  \item\points{2} Sei $n=10$, berechnen Sie $1 \oplus 2$, $3 \oplus 10$, $4 \oplus 7$ und $123 \oplus 456$.
+  \item\points{6} Beweisen Sie, dass $(\NN_n,\oplus)$ eine Gruppe ist.
   Was ist das neutrale Element?
   Wie lautet das inverse Element für $a\in\NN_n$?
-  \item Mit welcher in der Vorlesung bereits behandelten Gruppe können Sie $(\NN_n,\oplus)$ identifizieren?
+  \item\points{1} Mit welcher in der Vorlesung bereits behandelten Gruppe können Sie $(\NN_n,\oplus)$ identifizieren?
 \end{subex}
 
 \begin{center}
-  \begin{tikzpicture}[scale=1.5]
-  \pgfmathsetmacro{\N}{7};
-  \pgfmathsetmacro{\offset}{1.7};
-  \pgfmathsetmacro{\inset}{.7};
+  \begin{tikzpicture}[scale=0.7,
+    number/.style={fill=white},
+    basenumber/.style={circle,draw,fill=white}
+  ]
+    %\clip(-7,-7) rectangle (8,8);
+
+    \draw[->,line width=1.2pt, smooth,samples=100,domain=0.0:14.0] plot[parametric] function{(t/4.0+2.0)*cos((t)),(t/4.0+2.0)*sin((t))};
+
+    \draw [->,dash pattern=on 2pt off 2pt,domain=0.0:7] plot(\x,{(-0.-0.*\x)/1.});
+    \draw [->,dash pattern=on 2pt off 2pt,domain=0.0:2] plot(\x,{(-0.--0.9510565162951531*\x)/0.30901699437494734});
+    \draw [<-,dash pattern=on 2pt off 2pt,domain=-6:0.0] plot(\x,{(-0.--0.5877852522924732*\x)/-0.8090169943749473});
+    \draw [<-,dash pattern=on 2pt off 2pt,domain=-6:0.0] plot(\x,{(-0.-0.5877852522924728*\x)/-0.8090169943749472});
+    \draw [->,dash pattern=on 2pt off 2pt,domain=0.0:2] plot(\x,{(-0.-0.9510565162951536*\x)/0.30901699437494723});
 
 
-  \foreach \i in {1,...,\N}{
-    \pgfmathsetmacro{\myphi}{360 / \N * (\i - 1)};
-    \pgfmathsetmacro{\j}{\i + \N}
-
-    \node at (\offset * cos \myphi,\offset * sin \myphi) {${\i}, {\pgfmathparse{\i + \N}\pgfmathprintnumber{\pgfmathresult}}, \ldots$};
-    \node at (\inset * cos \myphi,\inset * sin \myphi) {${\i}$};
-    \draw[-|] (cos \myphi,sin \myphi) arc [start angle=\myphi,end angle=(\myphi + 360 / \N),radius=1cm];
-  }  
+    \node [basenumber] at (2.,0.) {$1$};
+    \node [number] at (3.5707962750845654,-7.38587137808993E-7) {$6$};
+    \node [number] at (5.141592699769043,9.497413887440426E-7) {$11$};
+    \node [basenumber] at (0.7151145872951262,2.2008962281510116) {$2$};
+    \node [number] at (1.2005181769307902,3.694811982928024) {$7$};
+    \node [number] at (1.6859191319071674,5.188728763108593) {$12$};
+    \node [basenumber] at (-2.126354241530161,1.5448870026154518) {$3$};
+    \node [number] at (-3.3971558936085913,2.468177040389493) {$8$};
+    \node [basenumber] at (-2.3805147208547806,-1.7295447587396982) {$4$};
+    \node [number] at (-3.65131495578304,-2.6528367592821107) {$9$};
+    \node [basenumber] at (1.006355674150686,-3.09724602495394) {$5$};
+    \node [number] at (1.4917598588409122,-4.591161738390655) {$10$};
   \end{tikzpicture}
 \end{center}
 
-\section{Verschiebungen in der Ebene}
+\section{Verschiebungen in der Ebene \points{8}}
 Die in der unten stehenden Abbildung gezeigten Pfeile repräsentieren Vektoren, die hier als Verschiebungen in der Ebene zu interpretieren sind.
 \begin{subex}
-  \item Skizzieren Sie folgende Linearkombinationen: $\uu + \vv$, $\uu - \ww$, $\frac{1}{2}\uu$, $2\ww + 3(\uu + \vv + \frac{1}{3}\ww)$
-  \item Bestimmen Sie die Komponenten $\mat{u}$, $\mat{v}$ und $\mat{w}$ von $\uu$, $\vv$ und $\ww$ bezüglich des Basissystems $(\ee_1, \ee_2)$.
-  \item Bestimmen Sie die Komponenten $\mat{e}_2$ von $\ee_2$ bezüglich des Basissystems $(\ee_1, \ww)$.
-  \item Warum ist $(\ee_1, \uu)$ kein geeignetes Basissystem für alle Verschiebungen in der Ebene? 
+  \item\points{2} Skizzieren Sie folgende Linearkombinationen: $\uu + \vv$, $\uu - \ww$, $\frac{1}{2}\uu$, $2\ww + 3(\uu + \vv + \frac{1}{3}\ww)$
+  \item\points{3} Bestimmen Sie die Komponenten $\mat{u}$, $\mat{v}$ und $\mat{w}$ von $\uu$, $\vv$ und $\ww$ bezüglich des Basissystems $(\ee_1, \ee_2)$.
+  \item\points{2} Bestimmen Sie die Komponenten $\mat{e}_2$ von $\ee_2$ bezüglich des Basissystems $(\ee_1, \ww)$.
+  \item\points{1} Warum ist $(\ee_1, \uu)$ kein geeignetes Basissystem für alle Verschiebungen in der Ebene?
 \end{subex}
 \begin{center}
   \begin{tikzpicture}[%
     coordline/.style={dotted},
     vector/.style={->}
   ]
-      
+
   \drawgrid{-1}{4}{-1}{2}
   \draw[vector] (1, 0) -- node[above] {$\uu$} ++ (2,0);
   \draw[vector] (3, 2) -- node[above] {$\vv$} ++ (-2,-1);
