@@ -57,8 +57,8 @@ Der Rest dieses Blattes enthält eine Beispielübung mit Musterlösung und soll 
 
 \section{Elementare Rechenoperationen mit Vektoren}
 \begin{subex}
-  \item Berechnen Sie $\vec{a} + \vec{b}$, $\vec{a} - \vec{b}$, $5 \vec{a}$ und $3 \vec{a} + (-2) \vec{b}$ für $\vec{a} = \colvec{3 \\ 1}$ und $\vec{b} = \colvec{ -1 \\ 2 }$.
-  \item Drücken Sie $\vec{a} = \colvec{ 1 \\ 3 }$ als Linearkombination von $\vec{e}_1 = \colvec{ 2 \\ 1 }$ und $\vec{e}_2 = \colvec{ 1 \\ -1 }$ aus.
+  \item Berechnen Sie $\mat{a} + \mat{b}$, $\mat{a} - \mat{b}$, $5 \mat{a}$ und $3 \mat{a} + (-2) \mat{b}$ für $\mat{a} = \colvec{3 \\ 1}$ und $\mat{b} = \colvec{ -1 \\ 2 }$.
+  \item Drücken Sie $\mat{a} = \colvec{ 1 \\ 3 }$ als Linearkombination von $\mat{e}_1 = \colvec{ 2 \\ 1 }$ und $\mat{e}_2 = \colvec{ 1 \\ -1 }$ aus.
 \end{subex}
 
 \begin{solution}
@@ -72,23 +72,23 @@ Der Rest dieses Blattes enthält eine Beispielübung mit Musterlösung und soll 
   \]
   Multiplikation von Vektoren mit reellen Zahlen ebenso
   \[
-    5 \mat{a} = 5 \colvec{ 3 \\ 1 } = \colvec{ 5 \cdot 3 \\ 5 \cdot 1 } = \colvec{ 15 \\ 5 }
+    5 \mat{a} = 5 \colvec{ 3 \\ 1 } = \colvec{ 5 \times 3 \\ 5 \times 1 } = \colvec{ 15 \\ 5 }
   \]
   Nacheinanderausführung von Multiplikation und Addition (\quotes{Punkt- vor Strichrechnung}), ebenfalls komponentenweise
   \[
-    3 \mat{a} + (-2) \mat{b} = \colvec{ 3 \cdot 3 \\ 3 \cdot 1 } + \colvec{ -2 \cdot (-1) \\ -2 \cdot 2 }
+    3 \mat{a} + (-2) \mat{b} = \colvec{ 3 \times 3 \\ 3 \times 1 } + \colvec{ -2 \times (-1) \\ -2 \times 2 }
     = \colvec{ 9 \\ 3 } + \colvec{ 2 \\ -4 } = \colvec{ 11 \\ -1 }
   \]
 
-  \item Stelle $\mat{a}$ als Linearkombination $x\cdot \vec{e}_1 + y\cdot \vec{e}_2$ dar, wobei die Koeffizienten $x,y \in \RR$ zunächst unbestimmt sind
+  \item Stelle $\mat{a}$ als Linearkombination $x\times \mat{e}_1 + y\times \mat{e}_2$ dar, wobei die Koeffizienten $x,y \in \RR$ zunächst unbestimmt sind
   \[
-    \vec{a} \stackrel{!}{=} x \cdot \vec{e}_1 + y \cdot \vec{e}_2
+    \mat{a} \stackrel{!}{=} x \times \mat{e}_1 + y \times \mat{e}_2
   \]
   Einsetzen liefert zwei Gleichungen für die Komponenten und somit ein lineares Gleichungssystem, das wir wie gewohnt lösen
   \begin{align*}
     \left\{ \begin{array}{l}1 = 2x + y \\  3 = x - y \end{array} \right. \quad [\,\,\rightarrow \mathrm{I + II}] \quad \left\{ \begin{array}{l}1 = 2x + y  \\  4 = 3x \end{array} \right.
   \end{align*}
-  Ablesen und Rückeinsetzen liefert $x = \frac{4}{3}$, $y = 1 - 2x = -\frac{5}{3}$, also gilt $\vec{a} = \frac{4}{3}\cdot\vec{e}_1 - \frac{5}{3}\cdot \vec{e}_2$.
+  Ablesen und Rückeinsetzen liefert $x = \frac{4}{3}$, $y = 1 - 2x = -\frac{5}{3}$, also gilt $\mat{a} = \frac{4}{3}\times\mat{e}_1 - \frac{5}{3}\times \mat{e}_2$.
   \end{subex}
 \end{solution}
 
