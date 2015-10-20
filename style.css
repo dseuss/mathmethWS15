@@ -61,6 +61,10 @@ nav {
     width: 100%;
 }
 
+.emph {
+    color: #FF0000;
+}
+
 #Nav a:link {
     color: #FFFFFF;
     text-decoration: none;
