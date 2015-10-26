@@ -1,6 +1,9 @@
 \documentclass{scrartcl}
 \usepackage{mm_ws15}
 
+\usetikzlibrary{quotes,angles,arrows,decorations.markings}
+
+
 \newcommand{\sheetTitle}{Blatt 2, Abgabe 3.11.2015 12:00}
 \newcommand{\FF}{\mathcal{F}}
 \newcommand{\PP}{\mathcal{P}}
@@ -14,7 +17,7 @@
 \label{ex:functionspace}
 \begin{subex}
   \item Sei $\FF = \{ f\colon \RR\to\RR, x \mapsto f(x) \}$ die Menge der reellen Funktionen.
-  Zeigen Sie, dass $(\FF,+,\cdot)$ einen Vektorraum bildet, wobei Addition und Multiplikation mit einem Skalar $\lambda \in \RR$ für $f, g \in \FF$ punktweise erklärt wird
+  Zeigen Sie, dass $(\FF,+,\times)$ einen Vektorraum bildet, wobei Addition und Multiplikation mit einem Skalar $\lambda \in \RR$ für $f, g \in \FF$ punktweise erklärt wird
   \[
     \label{eq:operations}\tag{*}
     (f + g)(x) = f(x) + g(x), \quad (\lambda \times f)(x) = \lambda \times f(x).
@@ -83,18 +86,31 @@ Für die Beziehung zwischen den beiden Basen gilt
 \end{subex}
 
 \section{Kräftezerlegung}
-Ein Mann mit einem Gewicht von $m=80\unit{kg}$ steht auf einer Leiter, die in einem Winkel von $\varphi=15^\circ$ an einer Wand lehnt (siehe Skizze).
+Eine Kugel mit Masse $m$ rollt eine geneigte Ebene mit Steigungswinkel $\varphi$ hinab.
 Es wirkt die Gewichtskraft $\vec{F}_\mathrm{G} = m \times g$, wobei $g$ die Fallbeschleunigung bezeichnet.
-
-Berechnen Sie daraus die Kraft $\vec{F}_\mathrm{A}$, die im Auflagepunkt gegen die Mauer wirkt und die Kraft $\vec{F}_\mathrm{B}$, die entlang der Leiter am Leiterfuß wirkt. Das Gewicht der Leiter kann vernachlalässigt werden.
-
-Bestimmen Sie außerdem den Teil von $\vec{F}_\mathrm{B}$, der parallel zum Erdboden gegen die Schwelle wirkt.
-
-\begin{remark}{Hinweis}
-  TODO
-\end{remark}
+Berechnen Sie daraus die Kraft $\vec{F}_\parallel$, die entlang der Bewegungsrichtung wirkt, und die Kraft $\vec{F}_\perp$, die senkrecht auf die Auflage wirkt.
 
 \begin{center}
-  \includegraphics[width=5cm,angle=0]{img/ex2_mann.pdf}
+  \begin{tikzpicture}[
+    scale=1.5,
+    myarrow/.style={decoration={markings,mark=at position 1 with %
+    {\arrow[scale=2,>=latex]{>}}},postaction={decorate}},
+    baseline/.style={line width=2pt}
+  ]
+
+     \draw[baseline]
+      (-4,1.5) coordinate (a) node[right] {}
+        -- (0,0) coordinate (b) node[left] {}
+        -- (-4,0) coordinate (c) node[above right] {}
+        pic["$\varphi$",draw,angle eccentricity=0.8,angle radius=2cm,line width=1pt] {angle=a--b--c};
+
+      \coordinate (center) at (-2., 1.3) {};
+      \draw (center) circle (.5);
+      \draw[myarrow] (center) -- node[above] {$\vec F_\parallel$} ++ (.657, -.246); 
+      \draw[myarrow] (center) -- node[right] {$\vec F_\mathrm{G}$} ++ (0,-2); 
+      \draw[myarrow] (center) -- node[left] {$\vec F_\perp$} ++ (-0.657,-1.753); 
+
+
+  \end{tikzpicture}
 \end{center}
 \end{document}
