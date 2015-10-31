@@ -23,6 +23,7 @@
 
 
 %% Load additional packages
+\usepackage{todonotes}
 \usepackage{wrapfig}
 \usepackage{bm}% bold math
 \usepackage{xspace}
@@ -55,9 +56,9 @@
   linecolor=lightgray,linewidth=1pt,%
   leftmargin=0cm,rightmargin=0cm
 }
-\newenvironment{solution}{%
+\newenvironment{solution}[1][Lösung]{%
   \mdfsetup{%
-    frametitle={\colorbox{white}{\,{\normalfont \textit{Lösung}}\,}},
+    frametitle={\colorbox{white}{\,{\normalfont \textit{#1}}\,}},
     frametitleaboveskip=-\ht\strutbox,
     frametitlealignment=\raggedright
   }
@@ -106,6 +107,8 @@
 \newcommand{\colvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
 \newcommand{\mat}[1]{\mathbf{#1}}
 \newcommand{\unit}[1]{{\,\mathrm{#1}}}
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\renewcommand{\sp}[2]{\left\langle #1, #2 \right\rangle}
 
 % Sets
 \newcommand{\RR}{\mathbb{R}}
