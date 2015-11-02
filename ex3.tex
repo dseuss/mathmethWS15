@@ -29,9 +29,14 @@ Beweisen Sie die folgenden Aussagen.
 \end{subex}
 
 \begin{remark}{Hinweise}
-  Für b) benutzen Sie die folgende Definition: $n \in \NN$ heißt gerade, wenn es ein $n' \in \NN$ gibt, sodass $n = 2n'$. 
-  \quotes{$\land$} steht für das logische UND.
-  \todo{More remarks! Example? What is $\implies$, what is $\iff$}
+  Für b) benutzen Sie die folgende Definition: $n \in \NN$ heißt gerade, wenn es ein $n' \in \NN$ gibt, sodass $n = 2n'$. Hier noch eine grobe Erläuterung der (möglicherweise) unbekannten Symbole (hierbei sind $A$ und $B$ logische Aussagen)
+  \begin{itemize}
+    \item $A \land B$ : logisches \textsc{und}; ist genau dann wahr, wenn $A$ und $B$ beide wahr sind
+    \item $A \implies B$: Implikation; aus der Wahrheit von Aussage $A$ folgt die Wahrheit von Aussage $B$
+    \item $A \iff B$: Äquivalenz; aus der Wahrheit von $A$ folgt die Wahrheit von $B$ und aus der Wahrheit von $B$ folgt die Wahrheit von $A$. 
+    Beweist man häufig, indem man die beiden Aussagen $A \implies B$ und $B \implies A$ zeigt.
+  \end{itemize}
+  Formal exakt werden diese Begriffe im mathematischen Teilgebiet der Aussagenlogik behandelt.
 \end{remark}
 
 \begin{solution}[Beispiel]
@@ -60,7 +65,7 @@ In der Vorlesung wurde das euklidische Skalarprodukt in $\RR^n$ definiert durch
   \sp{\cdot}{\cdot} \colon \RR^n \times \RR^n \to \RR, (\uu, \vv) \mapsto \sp{\uu}{\vv} = \sum_{k=1}^n u_k v_k.
 \]
 \begin{subex}
-  \item Zeigen Sie, dass $\sp{\cdot}{\cdot}$ ein Skalarprodukt auf $\RR^n$ ist, d.h.\ die drei Eigenschaften eines Skalarprodukts erfüllt sind (siehe unten).
+  \item Zeigen Sie, dass $\sp{\cdot}{\cdot}$ ein Skalarprodukt auf $\RR^n$ ist, d.h.\ die drei Eigenschaften eines Skalarprodukts erfüllt sind (siehe Vorlesung 1.5.1).
   \item Berechnen Sie $\sp{\uu}{\vv}$, $\norm{\uu}$ und $\norm{\vv}$ für 
   \[
     \uu = \colvec{1 \\ 0 \\ 3} \quad\mbox{und}\quad \colvec{-5 \\ 2 \\ 1}.
@@ -72,8 +77,8 @@ In der Vorlesung wurde das euklidische Skalarprodukt in $\RR^n$ definiert durch
   \begin{itemize}
     \item $V = \RR^3, \sp{\uu}{\vv} = 2u_1 v_1 +u_2 v_2 +5u_3 v_3$
     \item $V = \RR^2, \sp{\uu}{\vv} = u_2 v_2 + u_1 v_1$
-    \item $V =\RR^2 \sp{\uu}{\vv} = 2u_1 v_1 + u_1 v_2 + u_2 v_1 + 3u_2 v_2$
-    \item $V =\RR^2 \sp{\uu}{\vv} = 2u_1 v_1 + u_1 v_2 + 3u_2 v_1 + u_2 v_2$
+    \item $V =\RR^2, \sp{\uu}{\vv} = 2u_1 v_1 + u_1 v_2 + u_2 v_1 + 3u_2 v_2$
+    \item $V =\RR^2, \sp{\uu}{\vv} = 2u_1 v_1 + u_1 v_2 + 3u_2 v_1 + u_2 v_2$
   \end{itemize}
 \end{subex}
 
@@ -86,9 +91,9 @@ Er lautet
   \]
 \begin{subex}
   \item Leiten Sie diese Beziehung her, dabei soll Ihnen die Skizze als Inspiration dienen.
-  \item Benutzen Sie den Kosinussatz um für beliebiges $n \in \NN$ folgendes zu zeigen: Für $\uu, \vv \in \RR^n$ gilt:
+  \item Benutzen Sie den Kosinussatz um für beliebiges $n \in \NN$ folgendes zu zeigen: Für $\uu, \vv \in \RR^n$ gilt
   \[
-    \cos \sphericalangle(\uu,\vv) = \frac{\sp{\uu}{\vv}}{\norm{\uu}\norm{\vv}}
+    \cos \sphericalangle(\uu,\vv) = \frac{\sp{\uu}{\vv}}{\norm{\uu}\norm{\vv}}.
   \] 
   Hierbei bezeichnet $\sphericalangle(\uu,\vv)$ den von $\uu$ und $\vv$ aufgespannten Winkel.
   \item Zeigen Sie, dass zwei Vektoren $\uu, \vv \in \RR^n$, $\uu, \vv \neq 0$ genau dann senkrecht aufeinander stehen, wenn ihr Skalarprodukt verschwindet.
@@ -104,7 +109,7 @@ Er lautet
 
   \coordinate (A) at (5,0);
   \coordinate (B) at (0,0);
-  \coordinate (C) at (2,2);
+  \coordinate (C) at (3,2);
 
   \draw (A) -- (B) node[midway, below] {$a$};
   \draw (B) -- (C) node[midway, above left] {$b$};
