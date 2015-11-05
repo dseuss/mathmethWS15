@@ -13,19 +13,19 @@
 \newcommand{\ww}{\mat w}
 
 
-\newcommand{\sheetTitle}{Blatt 3, Abgabe 10.11.2015 12:00} 
+\newcommand{\sheetTitle}{Blatt 3, Abgabe 10.11.2015 12:00}
 \begin{document}
 \maketitle
 
 \section{Direkte Beweise \points{10}}
-Beweisen Sie die folgenden Aussagen. 
+Beweisen Sie die folgenden Aussagen.
 Übersetzen Sie außerdem Aussagen, die ausformuliert sind, in formale mathematische Aussagen und umgekehrt.
 \begin{subex}
   \item\points{2} Für alle reellen Zahlen $x$, die größer als 1 sind, ist $6x + 3$ größer als $3x + 6$.
   \item\points{2} Das Quadrat aller geraden natürlichen Zahlen ist wieder gerade.
   \item\points{2} Alice ist 16 Jahre alt. Damit ist Alice genau doppelt so alt, wie Bob war, als Alice so alt war, wie es Bob jetzt ist. Bob ist 12 Jahre alt.
   \item\points{2} $\forall k, m \in \NN\colon k + m \le k \times m \implies k \ge 2 \land m \ge 2$
-  \item\points{2} $\forall p, q \in \RR\colon (\forall x \in \RR\colon x^2 + px + q > 0) \iff \left( \frac{p^2}{4} < q \right)$ 
+  \item\points{2} $\forall p, q \in \RR\colon (\forall x \in \RR\colon x^2 + px + q > 0) \iff \left( \frac{p^2}{4} < q \right)$
 \end{subex}
 
 \begin{remark}{Hinweise}
@@ -33,7 +33,7 @@ Beweisen Sie die folgenden Aussagen.
   \begin{itemize}
     \item $A \land B$ : logisches \textsc{und}; ist genau dann wahr, wenn $A$ und $B$ beide wahr sind
     \item $A \implies B$: Implikation; aus der Wahrheit von Aussage $A$ folgt die Wahrheit von Aussage $B$
-    \item $A \iff B$: Äquivalenz; aus der Wahrheit von $A$ folgt die Wahrheit von $B$ und aus der Wahrheit von $B$ folgt die Wahrheit von $A$. 
+    \item $A \iff B$: Äquivalenz; aus der Wahrheit von $A$ folgt die Wahrheit von $B$ und aus der Wahrheit von $B$ folgt die Wahrheit von $A$.
     Beweist man häufig, indem man die beiden Aussagen $A \implies B$ und $B \implies A$ zeigt.
   \end{itemize}
   Formal exakt werden diese Begriffe im mathematischen Teilgebiet der Aussagenlogik behandelt.
@@ -47,11 +47,11 @@ Beweisen Sie die folgenden Aussagen.
   \emph{Beweis:} Da $m$ und $n$ gerade sind existieren lt.\ Definition $m', n' \in \NN$, sodass $m = 2m'$ und $n = 2n'$. Damit folgt, dass $m + n$ gerade ist, da
   \[
     m + n = 2m' + 2n' = 2 (m' + n').
-  \] 
+  \]
 
   Den selben Beweis kann man mit weniger Prosa wie folgt aufschreiben:
   \begin{align*}
-    m, n \mbox{ gerade} 
+    m, n \mbox{ gerade}
     &\iff \exists m', n' \in \NN\colon m = 2m' \land n = 2n' \\
     &\implies m + n = 2 (m' + n') \\
     &\implies (m + n) \mbox{ gerade}
@@ -66,12 +66,12 @@ In der Vorlesung wurde das euklidische Skalarprodukt in $\RR^n$ definiert durch
 \]
 \begin{subex}
   \item\points{4} Zeigen Sie, dass $\sp{\cdot}{\cdot}$ ein Skalarprodukt auf $\RR^n$ ist, d.h.\ die drei Eigenschaften eines Skalarprodukts erfüllt sind (siehe Vorlesung 1.5.1).
-  \item\points{3} Berechnen Sie $\sp{\uu}{\vv}$, $\norm{\uu}$ und $\norm{\vv}$ für 
+  \item\points{3} Berechnen Sie $\sp{\uu}{\vv}$, $\norm{\uu}$ und $\norm{\vv}$ für
   \[
-    \uu = \colvec{1 \\ 0 \\ 3} \quad\mbox{und}\quad \colvec{-5 \\ 2 \\ 1}.
+    \uu = \colvec{1 \\ 0 \\ 3} \quad\mbox{und}\quad \vv = \colvec{-5 \\ 2 \\ 1}.
   \]
   Hier bezeichnet $\norm{\uu} = \sqrt{\sp{\uu}{\uu}}$ die induzierte Norm.
-  \item\points{2} Finden Sie alle Vektoren $\vv \in \RR^2$, die mit $\uu = \colvec{1 \\ 2}$ das Skalarprodukt $\sp{\uu}{\vv} = 2$ haben.  
+  \item\points{2} Finden Sie alle Vektoren $\vv \in \RR^2$, die mit $\uu = \colvec{1 \\ 2}$ das Skalarprodukt $\sp{\uu}{\vv} = 2$ haben.
   \item\points{4} Welche der folgenden Beispiele definiert ein Skalarprodukt auf $V$?
   Überprüfen Sie jeweils die Bedingungen an ein Skalarprodukt.
   \begin{itemize}
@@ -94,7 +94,7 @@ Er lautet
   \item\points{2} Benutzen Sie den Kosinussatz um für beliebiges $n \in \NN$ folgendes zu zeigen: Für $\uu, \vv \in \RR^n$ gilt
   \[
     \cos \sphericalangle(\uu,\vv) = \frac{\sp{\uu}{\vv}}{\norm{\uu}\norm{\vv}}.
-  \] 
+  \]
   Hierbei bezeichnet $\sphericalangle(\uu,\vv)$ den von $\uu$ und $\vv$ aufgespannten Winkel.
   \item\points{1} Zeigen Sie, dass zwei Vektoren $\uu, \vv \in \RR^n$, $\uu, \vv \neq 0$ genau dann senkrecht aufeinander stehen, wenn ihr Skalarprodukt verschwindet.
 \end{subex}
@@ -116,12 +116,12 @@ Er lautet
   \draw[dotted] (C) -- (A) node[midway, above right] {$c$};
 
   \draw pic["$\varphi$",draw,angle eccentricity=0.6,angle radius=1cm,line width=.5pt] {angle=A--B--C};
-  
+
   \end{tikzpicture}
 \end{center}
 
 
 
- 
+
 
 \end{document}
