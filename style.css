@@ -82,7 +82,3 @@ nav {
     counter-reset: item attr(start, item, 0);
     margin: 0em 1em;
 }
-
-#ExCounter li:before {
-    content: "Übungsblatt ";
-}
