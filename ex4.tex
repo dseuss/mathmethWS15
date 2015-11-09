@@ -6,7 +6,7 @@
 \maketitle
 
 
-\section{Das Methanmolekül}
+\section{Das Methanmolekül \points{6}}
 Ein Methanmolekül (chemische Formel $\mathrm{CH}_4$) besitzt die Struktur eines regulären Tetraheders (siehe Bild).
 Die Wasserstoffatome (weiß) befinden sich dabei in den Punkten $(0,0,0)$, $(k,k,0)$, $(k,0,k)$ und $(0,k,k)$; das Kohlenstoff im Zentrum im Punkt $(\frac{k}{2},\frac{k}{2},\frac{k}{2})$.
 Hierbei bezeichnet $k$ eine Längenkonstante.
@@ -20,7 +20,7 @@ Hierbei bezeichnet $k$ eine Längenkonstante.
 \end{center}
 
 
-\section{Eigenschaften des Vektorproduktes}
+\section{Eigenschaften des Vektorproduktes \points{6}}
 In dieser Aufgabe sollen Sie die folgenden Eigenschaften des Vektorproduktes nachweisen:
 Für drei Vektoren $\vec{u},\vec{v},\vec{w} \in \RR^3$ gilt
 \begin{itemize}
@@ -41,26 +41,25 @@ Hier bezeichnet $\sp{\cdot}{\cdot}$ das euklidische Skalarprodukt.
   \begin{gather}
     \epsilon_{ijk} =
     \begin{cases}
-      % TODO Change this to cycl./acycl. perm.
-      +1 &\textrm{falls}\ (i,j,k)\ \textrm{gerade Permutation}\\
-      -1 &\textrm{falls}\ (i,j,k)\ \textrm{ungerade Permutation}\\
+      +1 &\textrm{falls}\ (i,j,k)\ \textrm{zyklische Permutation von } (1,2,3)\\
+      -1 &\textrm{falls}\ (i,j,k)\ \textrm{azyklische Permutation von } (1,2,3)\\
       0 &\textrm{sonst}
     \end{cases}
     \nonumber
   \end{gather}
-  Eine Permutation $\sigma$ (siehe auch Blatt 1) heißt \emph{gerade}, wenn eine gerade Anzahl von paarweisen Vertauschungen benötigt wird, um $\sigma = (\sigma(1),\ldots,\sigma(n))$ in $(1,\ldots,n)$ zu überführen.
-  Eine ungerade Permutation benötigt eine ungerade Anzahl an Vertauschungen.
-
-  Als Beispiel wähle $\sigma = (3,1,2)$. 
-  Eine Mögliche Folge von Vertauschungen sieht so aus $(3,1,2) \to (2,1,3) \to (1,2,3)$, d.h.\ es handelt sich um eine gerade Permutation.
-
+  Eine Permutation von $n$ Elementen $\sigma$ (siehe auch Blatt 1) heißt \emph{zyklisch}, wenn sie alle Elemente um die gleiche Zahl von Stellen verschiebt, d.h.
+  \[
+    \sigma(i) = i \oplus k = \operatorname{mod}_n(i + k)
+  \]
+  für ein $k \in \NN$ (siehe auch Übungsblatt 1).
+  Wenn eine Permutation nicht zyklisch ist, heißt sie azyklisch.
   Machen Sie sich klar, dass $\epsilon_{123}=\epsilon_{231}=\epsilon_{312}=1$, $\epsilon_{132}=\epsilon_{321}=\epsilon_{213}=-1$ und $0$ in allen anderen Fällen.
 \end{remark}
 
 
-\section{Vektorprodukte} 
+\section{Vektorprodukte \points{6}} 
 Berechnen Sie die folgenden Vektorprodukte.
-Prüfen Sie in a) auch explizit, dass $\vec{a} \times \vec{b}$ senkrecht auf $\vec{a}$ und $\vec{b}$ steht.
+Prüfen Sie jeweils auch explizit, ob $\vec{a} \times \vec{b}$ senkrecht auf $\vec{a}$ und $\vec{b}$ steht.
 
 \begin{subex*}
   \item $\colvec{1 \\ 2 \\ 3} \times \colvec{4 \\ 5 \\ 6}$
@@ -68,26 +67,24 @@ Prüfen Sie in a) auch explizit, dass $\vec{a} \times \vec{b}$ senkrecht auf $\v
   \item $\colvec{\frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \\ 0} \times \colvec{\frac{1}{\sqrt{2}} \\ 0 \\ -\frac{1}{\sqrt{2}}}$
 \end{subex*}
 
-\section{Grenzwerte reeller Funktionen}
+\section{Grenzwerte reeller Funktionen \points{12}}
 In der Vorlesung haben Sie die den Grenzwert einer reellen Funktion $f\colon \RR \to \RR$ kennen gelernt:
 $y \in \RR$ heißt Grenzwert von $f$ an der Stelle $x_0 \in \RR$, wenn für alle $\epsilon > 0$ ein $\delta > 0$ exisiert, sodass für alle $x \in \RR$ mit $\abs{x - x_0} < \delta$ gilt $\abs{f(x) - y} < \epsilon$.
 Man schreibt für den Grenzwert dann $y = \lim_{x \to x_0} f(x)$.
-% TODO REALLY?
-Falls der Grenzwert nicht existiert sagt man $f$ divergiert für $x \to x_0$.
 
 Analog definiert man den Grenzwert für \quotes{$x_0 = \pm\infty$}: 
 $y = \lim_{x \to \infty}$ ($y = \lim_{x \to -\infty}$) wenn für alle $\epsilon > 0$ ein $S \in \RR$ exisiert, sodass für $x > S$ ($x < S$) folgt $\abs{f(x) - y} < \epsilon$. 
 
 \begin{subex}
-  \item Beweisen Sie, dass $\lim_{x \to -3} 1 - 4x = 13$ (mit anderen Worten: für gegebens $\epsilon$, bestimmen Sie $\delta$).
+  \item\points{5} Beweisen Sie, dass $\lim_{x \to -3} 1 - 4x = 13$ (mit anderen Worten: für gegebens $\epsilon$, bestimmen Sie $\delta$).
   Was ist der Grenzwert $\lim_{x \to 3} 1 - 4x$?
   Beweisen Sie das!
-  \item Betrachte $f(x) = \frac{1}{2^x}$.
+  \item\points{4} Betrachte $f(x) = \frac{1}{2^x}$.
   Skizzieren Sie den Verlauf der Funktion für $x \in \RR$.
   Was passiert für große $x$; was passiert für kleine $x$?
   Mit anderen Worten: Geben Sie den Grenzwert von $f$ für $x \to \infty$ und $x \to -\infty$ an.
   Bestimmen Sie außerdem $\lim_{x \to 0} f(x)$.
-  \item Existieren die folgenden Grenzwerte? 
+  \item\points{3} Existieren die folgenden Grenzwerte? 
   Wenn ja, geben Sie diese an.
   Begründen Sie Ihr Ergebnis kurz (kein Beweis!).
   \[
@@ -97,5 +94,4 @@ $y = \lim_{x \to \infty}$ ($y = \lim_{x \to -\infty}$) wenn für alle $\epsilon 
   \]
 \end{subex}
 
-% TODO Example
 \end{document}
