@@ -1,0 +1,90 @@
+\documentclass{scrartcl}
+\usepackage{mm_ws15}
+
+\newcommand{\sheetTitle}{Blatt 5, Abgabe 24.11.2015 12:00}
+\begin{document}
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Ableitungen elementarer Funktionen}
+\label{sec:ableitungen_elementarer_funktionen}
+
+
+In der Vorlesung haben Sie die Definition der \emph{Ableitung einer Funktion am Punkt $x$} über den Grenzwert des Differentialquotienten kennengelernt
+\[
+  f'(x) := \lim_{\delta x \to 0}  \frac{f(x + \delta x) - f(x)}{\delta x}.
+\] 
+Dabei setzten wir natürlich voraus, das der Grenzwert existiert.
+Benutzen Sie die obige Definition, um die folgenden elementaren Ableitungen zu zeigen
+
+\begin{subex}
+  \item Für die konstante Funktion $f(x) = a$ mit $a \in \RR$ gilt $f'(x) = 0$
+  \item $\left( x^n \right)' = n \, x^{n-1}$ für $n \in \NN$ (Hinweis: Binomischer Lehrsatz)
+  \item $\left( \frac{1}{x} \right)' = -\frac{1}{x^2}$
+\end{subex}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Ableitungsregeln}
+\label{sec:ableitungsregeln}
+
+In dieser Aufgabe sollen Sie die wichtigsten Regeln zu Berechnung der Ableitung bewiesen werden.
+Benutzen Sie dafür die Definition aus Aufgabe~\ref{sec:ableitungen_elementarer_funktionen}.
+Dabei sind $f, g$ zwei (in den entsprechenden Punkten) differenzierbare, reelle Funktionen und $a \in \RR$ eine Konstante.
+
+Bereits bewiesene Aussagen (auch aus Aufgabe~\ref{sec:ableitungen_elementarer_funktionen}) können selbstverständlich verwendet werden.
+Die Reihenfolge, in der die Aufgaben behandelt werden, ist frei wählbar.
+
+\begin{subex}
+  \item $(a f)'(x) = a f'(x)$ und $(f + g)'(x) = f'(x) + g'(x).$ \emph{(Linearität der Ableitung)}
+  \item $(f g)'(x) = f'(x) g(x) + f(x) g'(x)$ \emph{(Produktregel)}
+  \item $\left( \frac{f}{g} \right)'(x) = \frac{f'(x) g(x) + f(x) g'(x)}{g(x)^2}$ \emph{(Quotientenregel)}
+  \item $(g \circ f)'(x) = g'(f(x)) f'(x)$ \emph{(Kettenregel)}\\
+  Hierbei ist $\circ$ die Verkettung zweier Funktionen: $(g \circ f)(x) = g(f(x))$
+  \item(3 Zusatzpunkte) $(f^{-1})'(x) = \frac{1}{f'\left( f^{-1}(x) \right)}$ \emph{(Ableitung der Umkehrfunktion)}\\
+  Hierbei muss $f$ an den entsprechenden Punkten invertierbar sein.
+  Beachten Sie die Definition des Inversen: $y = f(x) \iff f^{-1}(y) = x$, was folgt daraus für $f^{-1}(f(x))$?
+\end{subex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Weitere Ableitungen}
+\label{sec:weitere_ableitungen}
+
+Bestimmen Sie die Ableitungen der folgenden Funktionen.
+Dabei können alle Ergebnisse aus den vorausgegangen Aufgaben sowie die Hinweise verwendet werden.
+Bitte geben Sie bei jedem Rechenschritt genau an, was Sie verwenden.
+
+\begin{subex*}
+  \item $a x^2 + b x + c$
+  \item $\sqrt{x}$
+  \item $\frac{1 + x}{1 - x}$
+  \item $\sin (x^2 + 5)$
+  \item $\log x$
+  \item $x^x$
+\end{subex*}
+
+\begin{remark}{Hinweise}
+  Der Logarithmus ist definiert als Inverses der Exponentialfunktion $\mathrm{e}^x$.
+  Es gilt $(\sin(x))' = \cos(x)$ sowie $\left( \mathrm{e}^x \right)' = \mathrm{e}^x$.
+  Die Potenz mit beliebigen Exponenten ist definiert über den Logarithmus:
+  \[
+    a^x := \mathrm{e}^{x \log a}
+  \]
+  Für $x \in \mathbb{Z}$ stimmt diese Definition mit der Ihnen bereits bekannten überein. 
+\end{remark}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Bahnkurve eines Teilchens}
+\label{sec:bahnkurve_eines_teilchens}
+
+Ein Massepunkt bewegt sich auf der Bahnkurve
+\[
+  \mat r(t) = \colvec{v_x t + x_0 \\ y_0 \\ -\frac{g}{2} t^2 + v_z t + z_0}.
+\]
+Berechnen Sie seine Geschwindigkeit $\mat v(t) = \frac{\dd \mat r(t)}{\dd t}$ und Beschleunigung $\mat a(t) = \frac{\dd \mat v(t)}{\dd t}$.
+Interpretieren Sie das Ergebnis.
+\end{document}
