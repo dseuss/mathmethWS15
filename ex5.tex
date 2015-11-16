@@ -2,12 +2,28 @@
 \usepackage{mm_ws15}
 
 \newcommand{\sheetTitle}{Blatt 5, Abgabe 24.11.2015 12:00}
+
+\newcommand\smallO[1]{
+        \mathchoice
+            {% \displaystyle
+                \ensuremath{\mathop{}\mathopen{}{\scriptstyle\mathcal{O}}\mathopen{}\left(#1\right)}
+            }
+            {% \textstyle
+                \ensuremath{\mathop{}\mathopen{}{\scriptstyle\mathcal{O}}\mathopen{}\left(#1\right)}
+            }
+            {% \scriptstyle
+                \ensuremath{\mathop{}\mathopen{}{\scriptscriptstyle\mathcal{O}}\mathopen{}\left(#1\right)}
+            }
+            {% \scriptscriptstyle  
+                \ensuremath{\mathop{}\mathopen{}{o}\mathopen{}\left(#1\right)}
+            }
+    }
 \begin{document}
 \maketitle
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Ableitungen elementarer Funktionen}
+\section{Ableitungen elementarer Funktionen \points{8}}
 \label{sec:ableitungen_elementarer_funktionen}
 
 
@@ -19,49 +35,24 @@ Dabei setzten wir natürlich voraus, das der Grenzwert existiert.
 Benutzen Sie die obige Definition, um die folgenden elementaren Ableitungen zu zeigen
 
 \begin{subex}
-  \item Für die konstante Funktion $f(x) = a$ mit $a \in \RR$ gilt $f'(x) = 0$
-  \item $\left( x^n \right)' = n \, x^{n-1}$ für $n \in \NN$ (Hinweis: Binomischer Lehrsatz)
-  \item $\left( \frac{1}{x} \right)' = -\frac{1}{x^2}$
-\end{subex}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Ableitungsregeln}
-\label{sec:ableitungsregeln}
-
-In dieser Aufgabe sollen Sie die wichtigsten Regeln zu Berechnung der Ableitung bewiesen werden.
-Benutzen Sie dafür die Definition aus Aufgabe~\ref{sec:ableitungen_elementarer_funktionen}.
-Dabei sind $f, g$ zwei (in den entsprechenden Punkten) differenzierbare, reelle Funktionen und $a \in \RR$ eine Konstante.
-
-Bereits bewiesene Aussagen (auch aus Aufgabe~\ref{sec:ableitungen_elementarer_funktionen}) können selbstverständlich verwendet werden.
-Die Reihenfolge, in der die Aufgaben behandelt werden, ist frei wählbar.
-
-\begin{subex}
-  \item $(a f)'(x) = a f'(x)$ und $(f + g)'(x) = f'(x) + g'(x).$ \emph{(Linearität der Ableitung)}
-  \item $(f g)'(x) = f'(x) g(x) + f(x) g'(x)$ \emph{(Produktregel)}
-  \item $\left( \frac{f}{g} \right)'(x) = \frac{f'(x) g(x) + f(x) g'(x)}{g(x)^2}$ \emph{(Quotientenregel)}
-  \item $(g \circ f)'(x) = g'(f(x)) f'(x)$ \emph{(Kettenregel)}\\
-  Hierbei ist $\circ$ die Verkettung zweier Funktionen: $(g \circ f)(x) = g(f(x))$
-  \item(3 Zusatzpunkte) $(f^{-1})'(x) = \frac{1}{f'\left( f^{-1}(x) \right)}$ \emph{(Ableitung der Umkehrfunktion)}\\
-  Hierbei muss $f$ an den entsprechenden Punkten invertierbar sein.
-  Beachten Sie die Definition des Inversen: $y = f(x) \iff f^{-1}(y) = x$, was folgt daraus für $f^{-1}(f(x))$?
+  \item\points{2} Für die konstante Funktion $f(x) = a$ mit $a \in \RR$ gilt $f'(x) = 0$
+  \item\points{3} $\left( x^n \right)' = n \, x^{n-1}$ für $n \in \NN$ (Hinweis: Binomischer Lehrsatz)
+  \item\points{3} $\left( \frac{1}{x} \right)' = -\frac{1}{x^2}$
 \end{subex}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Weitere Ableitungen}
+\section{Weitere Ableitungen \points{10}}
 \label{sec:weitere_ableitungen}
 
 Bestimmen Sie die Ableitungen der folgenden Funktionen.
-Dabei können alle Ergebnisse aus den vorausgegangen Aufgaben sowie die Hinweise verwendet werden.
-Bitte geben Sie bei jedem Rechenschritt genau an, was Sie verwenden.
+Sie können dafür die bekannten elementaren Ableitungen sowie die üblichen Rechenregeln verwenden (Linearität, Produktregel, Kettenregel, Umkehrregel, etc.).
 
 \begin{subex*}
   \item $a x^2 + b x + c$
-  \item $\sqrt{x}$
-  \item $\frac{1 + x}{1 - x}$
   \item $\sin (x^2 + 5)$
+  \item $\frac{1 + x}{1 - x}$
+  \item $\cos^2 (x^2)$
   \item $\log x$
   \item $x^x$
 \end{subex*}
@@ -76,15 +67,33 @@ Bitte geben Sie bei jedem Rechenschritt genau an, was Sie verwenden.
   Für $x \in \mathbb{Z}$ stimmt diese Definition mit der Ihnen bereits bekannten überein. 
 \end{remark}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Partielle Ableitungen \points{8}}
+\label{sec:partielle_ableitungen}
+Bisher haben wir nur Funktionen einer Veränderlichen betrachtet; genauso kann eine Funktion natürlich von zwei oder mehr Variablen abhängen. 
+Betrachtet man nun eine kleine Änderung in einer der Variablen und möchte wissen, wie dies den Funktionswert beeinflusst, benötigt man das Konzept der \emph{partiellen Ableitung}, welches Sie in der Vorlesung kennengelernt haben.\\
+Betrachten Sie die folgenden Funktionen:
+\begin{align*}
+f(x_1,x_2)=\sin(x_1)+x_2^2 \qquad g(y_1,y_2,y_3)= y_1\cdot\exp(2\cdot y_3)-x_1^2\cdot \ln(y_2).
+\end{align*}
+
+\begin{subex}
+\item\points{5} Berechnen Sie die partiellen Ableitungen $\frac{\partial}{\partial x_1}f(x_1,x_2)$, $\frac{\partial}{\partial x_2}f(x_1,x_2)$, $\frac{\partial}{\partial y_1} g(y_1,y_2,y_3)$, $\frac{\partial}{\partial y_2} g(y_1,y_2,y_3)$ und $\frac{\partial}{\partial y_3}g(y_1,y_2,y_3)$.
+\item\points{3} Nun betrachten wir die zweifache Ableitung von $f$ nach unterschiedlichen Variablen. Berechnen Sie $\frac{\partial^2}{\partial x_1\partial x_2}f(x_1,x_2)$ und $\frac{\partial^2}{\partial x_2\partial x_1}f(x_1,x_2)$.
+Spielt die Reihenfolge, in der man die Ableitungen ausführt, eine Rolle?
+Erklären Sie!
+\end{subex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Bahnkurve eines Teilchens}
-\label{sec:bahnkurve_eines_teilchens}
+\section{Partielle Ableitung als lineare Approximation \points{4}}
+\label{sec:partielle_ableitung_als_lineare_approximation}
 
-Ein Massepunkt bewegt sich auf der Bahnkurve
-\[
-  \mat r(t) = \colvec{v_x t + x_0 \\ y_0 \\ -\frac{g}{2} t^2 + v_z t + z_0}.
-\]
-Berechnen Sie seine Geschwindigkeit $\mat v(t) = \frac{\dd \mat r(t)}{\dd t}$ und Beschleunigung $\mat a(t) = \frac{\dd \mat v(t)}{\dd t}$.
-Interpretieren Sie das Ergebnis.
+Leiten Sie Formel~\eqref{eq:twoseventeen} der Vorlesung\footnote{%
+  Evtl. fehlte in Ihrer Version des Skripts der Term $f(x_i, x_j)$.
+} her:
+\begin{equation}
+  \tag{2.17}
+  \label{eq:twoseventeen}
+  f(x_i + \delta x_i, x_j + \delta x_j) = f(x_i, x_j) + \delta x_i \pderiv[f]{x_i}(x_i, x_j) + \delta x_j \pderiv[f]{x_j}(x_i, x_j) + \mathcal{O}(\delta x_{i/j}^2)
+\end{equation}
 \end{document}

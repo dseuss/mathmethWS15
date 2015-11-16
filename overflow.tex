@@ -6,20 +6,39 @@
 \maketitle
 
 
-\section{Das Methanmolekül}
-Ein Methanmolekül (chemische Formel $\mathrm{CH}_4$) besitzt die Struktur eines regulären Tetraheders (siehe Bild).
-Die Wasserstoffatome (weiß) befinden sich dabei in den Punkten $(0,0,0)$, $(k,k,0)$, $(k,0,k)$ und $(0,k,k)$; das Kohlenstoff im Zentrum im Punkt $(\frac{k}{2},\frac{k}{2},\frac{k}{2})$.
-Hierbei bezeichnet $k$ eine Längenkonstante.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Ableitungsregeln}
+\label{sec:ableitungsregeln}
+
+In dieser Aufgabe sollen Sie die wichtigsten Regeln zu Berechnung der Ableitung bewiesen werden.
+Benutzen Sie dafür die Definition aus Aufgabe~\ref{sec:ableitungen_elementarer_funktionen}.
+Dabei sind $f, g$ zwei (in den entsprechenden Punkten) differenzierbare, reelle Funktionen und $a \in \RR$ eine Konstante.
+
+Bereits bewiesene Aussagen (auch aus Aufgabe~\ref{sec:ableitungen_elementarer_funktionen}) können selbstverständlich verwendet werden.
+Die Reihenfolge, in der die Aufgaben behandelt werden, ist frei wählbar.
+
 \begin{subex}
-  \item Zeigen Sie, dass die angegebene Struktur tatsächlich einen regulären Tetraeder bilden, d.h.\ dass alle Verbindungslinien zwischen den Wasserstoffatomen gleich lang sind.
-  \item Berechnen Sie den Bindungswinkel zwischen zwei Wasserstoffatomen, d.h.\ den Winkel, der von zwei Wasserstoffatomen mit dem Kohlenstoffatom im Scheitelpunkt aufgespannt wird.
+  \item $(a f)'(x) = a f'(x)$ und $(f + g)'(x) = f'(x) + g'(x).$ \emph{(Linearität der Ableitung)}
+  \item $(f g)'(x) = f'(x) g(x) + f(x) g'(x)$ \emph{(Produktregel)}
+  \item $\left( \frac{f}{g} \right)'(x) = \frac{f'(x) g(x) + f(x) g'(x)}{g(x)^2}$ \emph{(Quotientenregel)}
+  \item $(g \circ f)'(x) = g'(f(x)) f'(x)$ \emph{(Kettenregel)}\\
+  Hierbei ist $\circ$ die Verkettung zweier Funktionen: $(g \circ f)(x) = g(f(x))$
+  \item(3 Zusatzpunkte) $(f^{-1})'(x) = \frac{1}{f'\left( f^{-1}(x) \right)}$ \emph{(Ableitung der Umkehrfunktion)}\\
+  Hierbei muss $f$ an den entsprechenden Punkten invertierbar sein.
+  Beachten Sie die Definition des Inversen: $y = f(x) \iff f^{-1}(y) = x$, was folgt daraus für $f^{-1}(f(x))$?
 \end{subex}
 
-\begin{center}
-  \includegraphics[width=3cm]{img/methan.png}
-\end{center}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Bahnkurve eines Teilchens}
+\label{sec:bahnkurve_eines_teilchens}
 
+Ein Massepunkt bewegt sich auf der Bahnkurve
+\[
+  \mat r(t) = \colvec{v_x t + x_0 \\ y_0 \\ -\frac{g}{2} t^2 + v_z t + z_0}.
+\]
+Berechnen Sie seine Geschwindigkeit $\mat v(t) = \frac{\dd \mat r(t)}{\dd t}$ und Beschleunigung $\mat a(t) = \frac{\dd \mat v(t)}{\dd t}$.
+Interpretieren Sie das Ergebnis.
 
 
 \section{Induktionsbeweise}
@@ -30,6 +49,30 @@ Beweisen Sie die folgenden Aussagen mittels volltsändiger Induktion.
   \item $\forall n \in \NN, n \ge 4\colon 2^n \ge n^2$
 \end{subex}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Die Ableitung als lineare Approximation \points{4}}
+\label{sec:ableitung_als_lineare_approximation}
 
+In der Vorlesung wurde kurz auf die Rolle der Ableitung als lokale lineare Approximation einer (im Allgemeinen nichtlinearen) Funktion $f$ eingegangen:
+\[
+  f(x_0 + h) = f(x_0) + f'(x_0) h + \smallO{h}.
+\]
+Hier steht $\smallO{h}$ für Terme höherer Ordnung als $h$, d.h.\ für $g(h) = \smallO{h}$ gilt $\lim_{h \to 0} \frac{g(h)}{h} = 0$.
+Zum Beispiel ist $h^2 = \smallO{h}$, aber $\frac{1}{2}h \neq \smallO{h}$.
+
+Betrachten Sie die Fläche eines Quadrates $A$ als Funktion der Seitenlänge $a$.
+Bestimmen Sie die Ableitung $A'(a)$ mithilfe der obigen Charakterisierung, d.h.\ berechnen Sie $A(a + h)$ und identifizieren Sie die einzelnen Terme $A(a)$, $A'(a)$ und $\smallO{h}$.
+
+Wie können sie $A'(a)$ und den Term $\smallO{h}$ geometrisch deuten (siehe auch die untere Skizze)?
+
+
+
+\begin{center}
+  \begin{tikzpicture}[scale=4]
+    \draw (0,0) -- (1,0) node[midway,below] {$a$} -- (1,1) -- (0,1) -- (0,0);
+    \draw[dashed] (0,0) -- (1.1,0) -- (1.1,1.1) -- (0,1.1) -- (0,0);
+    \node[below] at (1.05,0) {$h$};
+  \end{tikzpicture}
+\end{center}
 
 \end{document}
