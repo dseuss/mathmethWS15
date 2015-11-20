@@ -13,7 +13,8 @@
 \fi
 
 \RedeclareSectionCommand[
-  afterskip=-1em,
+  beforeskip=2\baselineskip,
+  afterskip=-1\baselineskip,
   font=\large\normalfont\bfseries
 ]{section}
 \RedeclareSectionCommand[
@@ -48,7 +49,7 @@
     \end{enumerate}
     }
 \newenvironment{subex*}{%
-    \begin{enumerate*}[label=\textbf{\alph*)},itemjoin=\hspace{1cm}]}{% 
+    \begin{enumerate*}[label=\textbf{\alph*)},itemjoin=\hspace{.7cm}]}{% 
     \end{enumerate*}
     }
 
@@ -102,6 +103,9 @@
     \end{center}
 }
 \newcommand{\points}[1]{(#1\,P)}
+\newcommand{\mitem}[1]{\item \( \displaystyle{#1} \)}
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+
 
 %% Math commands
 \newcommand{\colvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
@@ -111,13 +115,14 @@
 \renewcommand{\sp}[2]{\left\langle #1, #2 \right\rangle}
 \newcommand{\abs}[1]{\left\vert #1 \right\vert}
 \newcommand{\dd}{\mathrm{d}}
+\newcommand{\deriv}[2][]{\frac{\dd #1}{\dd{#2}}}
 \newcommand{\pderiv}[2][]{\frac{\partial #1}{\partial{#2}}}
 
-% Sets
+% Symbols
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\NN}{\mathbb{N}}
 \newcommand{\QQ}{\mathbb{Q}}
-
+\newcommand{\ee}{\mathrm{e}}
 
 % TikZ Fun
 \newcommand{\drawgrid}[4]{%

@@ -1,0 +1,61 @@
+\documentclass{scrartcl}
+\usepackage{mm_ws15}
+
+\newcommand{\sheetTitle}{Blatt 6, Abgabe 1.12.2015 12:00}
+\begin{document}
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Partielle Integration}
+\label{sec:partielle_integration}
+
+Berechnen Sie mit Hilfe partieller Integration.
+\begin{flalign*}
+  \mathbf{a)} &\quad  \int_0^1 \dd x\, x \, \ee^{-2 x} &
+  \mathbf{b)} &\quad \int_{0}^{\pi/2} \dd x\, \sin(x)  \cos(x) &
+  \mathbf{c)} &\quad \int_0^1 \dd x\, (1 + x) \, \ee^{ x}  &\\
+  \mathbf{d)} &\quad \int_1^2  \dd x\,\frac{\log(x)}{x^2}  &
+  \mathbf{e)} &\quad \int_{x_{0}}^{x_{1}}  \dd x\,\ee^{a x} \cos (b x) &
+\end{flalign*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Integration durch Substitution}
+\label{sec:substitution}
+
+Berechnen Sie mittels Substitution
+\begin{flalign*}
+  \mathbf{a)}&\quad \int_0^1 \dd x\,  x \, \ee^{x^2} &
+  \mathbf{b)}&\quad \int \dd x\,  \frac{1}{\sqrt{7 - 3x}}   &
+  \mathbf{c)}&\quad \int_0^1 \dd x\,  \frac{x}{x^2+1}  \\
+  \mathbf{d)}&\quad \int_0^1  \dd x\, x^2  \sqrt{2 x^3 + 4}   &
+  \mathbf{e)}&\quad \int_{a}^{b} \dd x\,  x  \cos(x^{2}+1)   &
+\end{flalign*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Mehrfachintegrale \rom{1}}
+\label{sec:mehrfachintegrale1}
+
+Berechnen Sie die folgenden Mehrfachintegrale.
+\begin{flalign*}
+  \mathbf{a)} &\quad  \int_0^a \dd x \int_0^b \dd y \int_0^h \dd z\, \ee^{-\alpha z}&
+  \mathbf{b)} &\quad \int_0^3 \dd y\int_0^1 \dd x\,\,y (1 + x)^2 &\\
+  \mathbf{c)} &\quad \int_{0}^{\pi/2} \dd x \int_{0}^{x} \dd y\,\, \sin(x) \sin(y)&
+  \mathbf{d)} &\quad \int_1^2 \dd y \int_1^{y^2} \dd x \log(x+y) &
+\end{flalign*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Mehrfachintegrale \rom{2}}
+\label{sec:mehrfachintegrale2}
+
+Betrachten wir nun als Anwendung von Mehrfachintegralen einen Quader, dessen Breite $a$ (in $x$-Richtung), Länge $b$ (in $y-$Richtung) und Höhe $c$ (in $z-$Richtung) beträgt. Die Dichte (also Masse pro Volumen) dieses Quaders ist nicht homogen, sondern hängt von $x,y$ und $z$ ab - stellen Sie sich zum Beispiel ein Gemisch aus Sand und Kieselsteinen im Inneren des Quaders vor. Hier soll sie über die Funktion
+\begin{align*}
+  \rho(x,y,z)=\rho_0\frac{(2x+3y)z^2}{V}
+\end{align*}
+beschrieben werden. Dabei ist $\rho_0$ eine Konstante der Einheit Masse pro Volumen und $V$ das Volumen des Quaders. Berechnen Sie die Masse $M$ des Quaders. Welches Ergebnis erhielten Sie, falls die Dichte konstant wäre, also $\rho(x,y,z)=\rho_0$ gelten würde?
+
+
+\end{document}

@@ -65,8 +65,6 @@ Bestimmen Sie die Ableitung $A'(a)$ mithilfe der obigen Charakterisierung, d.h.\
 
 Wie können sie $A'(a)$ und den Term $\smallO{h}$ geometrisch deuten (siehe auch die untere Skizze)?
 
-
-
 \begin{center}
   \begin{tikzpicture}[scale=4]
     \draw (0,0) -- (1,0) node[midway,below] {$a$} -- (1,1) -- (0,1) -- (0,0);
@@ -75,4 +73,15 @@ Wie können sie $A'(a)$ und den Term $\smallO{h}$ geometrisch deuten (siehe auch
   \end{tikzpicture}
 \end{center}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Bahnkurven}
+\label{sec:bahnkurven}
+
+Berechnen Sie die Geschwindigkeit $\mat v(t) = \deriv[\mat r]{t}(t)$ und Beschleunigung $\mat a(t) = \deriv[\mat v]{t}(t)$ der folgenden Bahnkurven.\\
+
+\begin{subex*}
+  \item $\mat r(t) = \colvec{v_x t + x_0 \\ y_0 \\ -\frac{g}{2} t^2 + v_z t + z_0}$
+  \item $\mat r(t) = \colvec{R \cos \omega t \\ R \sin \omega t \\ v_z t}$
+  \item $\mat r(t) = R \mathrm{e}^{-\eta t}$ \colvec{\cos \omega t \\ \sin \omega t \\ 0} 
+\end{subex*}
 \end{document}
