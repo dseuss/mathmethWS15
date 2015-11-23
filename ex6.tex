@@ -5,50 +5,68 @@
 \begin{document}
 \maketitle
 
+\vspace{\baselineskip}
+\emph{%
+  Gegebenfalls können aus Zeitgründen nicht alle Aufgaben in der Übung vorgerechnet werden.
+  Von jedem Aufgabentyp sollte aber mindestens eine Teilaufgabe behandelt werden.
+  Die Ergebnisse (ohne Rechenwege) werden nach den Übungen auf die Übungsseite gestellt.
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Partielle Integration}
+\section{Taylorreihen \points{6}}
+\label{sec:taylorreihen}
+
+Bestimmen Sie die Taylorreihen $f(x) = \sum_{x=0}^\infty a_k x^k$ der folgenden Funktionen indem Sie die Koeffizienten $a_n$ explizit angeben.\\
+
+\begin{subex*}
+  \mitem{f(x) = a^x} 
+  \mitem{f(x) = \frac{1}{(1 + x)^2}} 
+  \mitem{f(x) = \ee^{-x^2}}
+\end{subex*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Partielle Integration \points{8}}
 \label{sec:partielle_integration}
 
 Berechnen Sie mit Hilfe partieller Integration.
 \begin{flalign*}
   \mathbf{a)} &\quad  \int_0^1 \dd x\, x \, \ee^{-2 x} &
-  \mathbf{b)} &\quad \int_{0}^{\pi/2} \dd x\, \sin(x)  \cos(x) &
-  \mathbf{c)} &\quad \int_0^1 \dd x\, (1 + x) \, \ee^{ x}  &\\
+  \mathbf{b)} &\quad \int_{0}^{\pi/2} \dd x\, \sin(x)  \cos(x) & \\
+  %\mathbf{c)} &\quad \int_0^1 \dd x\, (1 + x) \, \ee^{ x}  &\\
   \mathbf{d)} &\quad \int_1^2  \dd x\,\frac{\log(x)}{x^2}  &
-  \mathbf{e)} &\quad \int_{x_{0}}^{x_{1}}  \dd x\,\ee^{a x} \cos (b x) &
+  \mathbf{e)} &\quad \int  \dd x\,\ee^{a x} \cos (b x) & 
 \end{flalign*}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Integration durch Substitution}
+\section{Integration durch Substitution \points{8}}
 \label{sec:substitution}
 
 Berechnen Sie mittels Substitution
 \begin{flalign*}
   \mathbf{a)}&\quad \int_0^1 \dd x\,  x \, \ee^{x^2} &
-  \mathbf{b)}&\quad \int \dd x\,  \frac{1}{\sqrt{7 - 3x}}   &
-  \mathbf{c)}&\quad \int_0^1 \dd x\,  \frac{x}{x^2+1}  \\
-  \mathbf{d)}&\quad \int_0^1  \dd x\, x^2  \sqrt{2 x^3 + 4}   &
-  \mathbf{e)}&\quad \int_{a}^{b} \dd x\,  x  \cos(x^{2}+1)   &
+  \mathbf{b)}&\quad \int_0^2 \dd x\,  \frac{1}{\sqrt{7 - 3x}}   & \\
+  \mathbf{c)}&\quad \int  \dd x\, x^2  \sqrt{2 x^3 + 4}   & 
+  \mathbf{d)}&\quad \int_{a}^{b} \dd x\,  x  \cos(x^{2}+1)   & 
+  %\mathbf{c)}&\quad \int_0^1 \dd x\,  \frac{x}{x^2+1}  \\
 \end{flalign*}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Mehrfachintegrale \rom{1}}
+\section{Mehrfachintegrale \rom{1} \points{6}}
 \label{sec:mehrfachintegrale1}
 
 Berechnen Sie die folgenden Mehrfachintegrale.
 \begin{flalign*}
-  \mathbf{a)} &\quad  \int_0^a \dd x \int_0^b \dd y \int_0^h \dd z\, \ee^{-\alpha z}&
-  \mathbf{b)} &\quad \int_0^3 \dd y\int_0^1 \dd x\,\,y (1 + x)^2 &\\
-  \mathbf{c)} &\quad \int_{0}^{\pi/2} \dd x \int_{0}^{x} \dd y\,\, \sin(x) \sin(y)&
-  \mathbf{d)} &\quad \int_1^2 \dd y \int_1^{y^2} \dd x \log(x+y) &
+  \mathbf{a)} \, &\quad  \int_0^a \dd x \int_0^b \dd y \int_0^h \dd z\, \ee^{-\alpha z}&  
+  \mathbf{b)} \, &\quad \int_{0}^{\pi/2} \dd x \int_{0}^{x} \dd y\,\, \sin(x) \sin(y)& \\
+  \mathbf{c)} \, & \quad \int_1^2 \dd y \int_1^{y^2} \dd x \log(x+y) & &
 \end{flalign*}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Mehrfachintegrale \rom{2}}
+\section{Mehrfachintegrale \rom{2}  \points{2}}
 \label{sec:mehrfachintegrale2}
 
 Betrachten wir nun als Anwendung von Mehrfachintegralen einen Quader, dessen Breite $a$ (in $x$-Richtung), Länge $b$ (in $y-$Richtung) und Höhe $c$ (in $z-$Richtung) beträgt. Die Dichte (also Masse pro Volumen) dieses Quaders ist nicht homogen, sondern hängt von $x,y$ und $z$ ab - stellen Sie sich zum Beispiel ein Gemisch aus Sand und Kieselsteinen im Inneren des Quaders vor. Hier soll sie über die Funktion
