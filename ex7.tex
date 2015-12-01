@@ -26,18 +26,18 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Flächenberechnung \& Volumenberechnung}
+\section{Flächenberechnung \& Volumenberechnung \points{5}}
 \label{sec:flaechenberechnung}
 
 \begin{subex}
-  \item Berechnen Sie das Integral
+  \item\points{2} Berechnen Sie das Integral
   \[ 
     I = \int_0^{1} \dd x \int_0^{1-x} \dd y .
   \]
   Überlegen Sie sich, was diese Integration geometrisch bedeutet.
   Was für eine Fläche beschreibt $I$?
 
-  \item Berechnen Sie das Volumen des Körpers $K = \{(x,y,z) \in \mathbb{R}^3 \, \vert \, x \in [-1, 1], x^2 + y^2 \le 1, 0 \le z \le 1 - \vert x \vert\}$ gegeben durch
+  \item\points{3} Berechnen Sie das Volumen des Körpers $K = \{(x,y,z) \in \mathbb{R}^3 \, \vert \, x \in [-1, 1], x^2 + y^2 \le 1, 0 \le z \le 1 - \vert x \vert\}$ gegeben durch
   \[
     V 
     = \int_{-1}^1 \dd x \int_{-\sqrt{1 - x^2}}^{\sqrt{1 - x^2}} \dd y \int_0^{1 - \vert x \vert} \dd z
@@ -51,7 +51,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Substitution in Mehrfachintegralen}
+\section{Substitution in Mehrfachintegralen \points{10}}
 \label{sec:substitution_in_mehrfachintegralen}
 
 Manche Mehrfachintegrale vereinfachen sich deutlich, wenn man eine Parametertransformation mehrerer Variablen gleichzeitig vornimmt.
@@ -68,11 +68,11 @@ In der Vorlesung haben Sie bereits Polarkoordinaten kennengelernt\footnote{%
 \end{equation}
 
 \begin{subex}
-  \item Was bedeuten diese beiden Gleichung geometrisch?
+  \item\points{3} Was bedeuten diese beiden Gleichung geometrisch?
   Argumentieren Sie, dass die von den Koordinatenlinien $r$, $r+\Delta r$,  $\phi$, $\phi+\Delta \phi$ eingeschlossene Fläche für kleine $\Delta r$ und $\Delta \phi$ näherungsweise den Flächeninhalt $r \Delta r \Delta \phi$ hat.
-  \item Nutzen Sie das Ergebnis aus a) um das Volumen des Körpers $K$ aus Aufgabe~\ref{sec:flaechenberechnung} zu berechnen.
+  \item\points{3} Nutzen Sie das Ergebnis aus a) um das Volumen des Körpers $K$ aus Aufgabe~\ref{sec:flaechenberechnung} zu berechnen.
   Achten Sie insbesondere auf die neuen Integrationsgrenzen.
-  \item Benutzen Sie Polarkoordinaten um den Flächeninhalt der Menge
+  \item\points{4} Benutzen Sie Polarkoordinaten um den Flächeninhalt der Menge
   \[
     C = \left\{ (x,y) \in \RR^2 \,\middle\vert\, (x^2 + y^2 + ax)^2 \le a^2 (x^2 + y^2) \right\}
   \]
@@ -95,22 +95,22 @@ In der Vorlesung haben Sie bereits Polarkoordinaten kennengelernt\footnote{%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Komplexe Zahlen}
+\section{Komplexe Zahlen \points{8}}
 \label{sec:komplexe_zahlen}
 
 \begin{subex}
-  \item Bestimmen Sie Real- und Imaginärteil der folgenden komplexen Zahlen
+  \item\points{2} Bestimmen Sie Real- und Imaginärteil der folgenden komplexen Zahlen
   \[
     v = \frac{2 - 4\ii}{1 + 2\ii}, \quad\quad w = 3(3 - 2\ii), \quad\quad z = 2 \ee^{-\ii \frac{\pi}{4}}.
   \]
-  \item Berechnen Sie $v + w$, $v - w$, $vw$, $\frac{z}{w}$ und $\bar z$. 
+  \item\points{3} Berechnen Sie $v + w$, $v - w$, $vw$, $\frac{z}{w}$ und $\bar z$. 
   Geben Sie die Lösung in der Form $u = \Re u + \ii\Im u$ an.
-  \item Finden Sie die Polarformel $z = r \ee^{\ii\Phi}$ für $v = 2 - 2\ii$ und $w_n = \ii^n$ ($n \in \mathbb{Z}$).
+  \item\points{3} Finden Sie die Polarformel $z = r \ee^{\ii\Phi}$ für $v = 2 - 2\ii$ und $w_n = \ii^n$ ($n \in \mathbb{Z}$).
 \end{subex}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Additionstheoreme}
+\section{Additionstheoreme \points{7}}
 \label{sec:additionstheoreme}
 
 Benutzen Sie \emph{Eulers Formel}
@@ -120,9 +120,9 @@ Benutzen Sie \emph{Eulers Formel}
 um die folgenden Additionstheoreme zu beweisen.
 
 \begin{subex} 
-  \item $\sin(x + y) = \sin x \cos x + \cos x \sin y$
-  \item $\cos(x - y) = \cos x \cos y + \sin x \sin y$
-  \item $\sin x + \sin y = 2 \sin \frac{x + y}{2} \, \cos \frac{x - y}{2}$
+  \item\points{2} $\sin(x + y) = \sin x \cos x + \cos x \sin y$
+  \item\points{2} $\cos(x - y) = \cos x \cos y + \sin x \sin y$
+  \item\points{3} $\sin x + \sin y = 2 \sin \frac{x + y}{2} \, \cos \frac{x - y}{2}$
 \end{subex}
 
 
