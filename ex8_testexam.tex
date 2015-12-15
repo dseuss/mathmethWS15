@@ -1,0 +1,141 @@
+\documentclass{scrartcl}
+\usepackage{mm_ws15}
+\usepackage{tabularx}
+\def\tabularxcolumn#1{m{#1}}
+
+\newcommand{\vv}{\vec{v}}
+\newcommand{\uu}{\vec{u}}
+\newcommand{\ww}{\vec{w}}
+
+\newcommand{\UU}{\mat{u}}
+\newcommand{\VV}{\mat{v}}
+\newcommand{\WW}{\mat{w}}
+
+
+\newcommand{\sheetTitle}{Blatt 8 -- Probeklausur}
+\begin{document}
+\maketitle
+
+\vspace{\baselineskip}
+
+\centering
+\begin{tabularx}{\textwidth}{|X|X|X|l|}
+  \hline
+  Name & Matrikelnummer & Studienfach & Übungsgruppe \\ 
+  \hline
+       &                &             &  \\[8ex]
+  \hline
+\end{tabularx}\\
+
+\vspace{\baselineskip}
+
+\raggedleft
+\begin{tabularx}{\textwidth}{|l|*5{>{\centering\arraybackslash}X|}@{}}
+  \hline
+  Aufgabe & 1 [10] & 2 [10] & 3 [15] & 4 [5] & 5 [10] \\
+  \hline
+  Punkte  & & & & & \\[3ex]
+  \hline
+\end{tabularx}
+
+\raggedright
+\begin{remark}{Hinweise}
+  Sie haben zur Bearbeitung dieser Klausur 90 Minuten Zeit.
+  Die Aufgaben sind \emph{nicht} nach Schwierigkeit sortiert, \emph{lesen Sie deshalb zunächst alle Aufgaben gründlich durch} und beginnen Sie mit der für Sie einfachsten Aufgabe.
+  Bitte schreiben Sie Ihren Namen leserlich auf dieses Deckblatt und auf alle Zettel, die Sie zur Korrektur abgeben.
+  Bitte schreiben Sie nicht mit Bleistift.
+  Taschenrechner und ähnliche Hilfsmittel sind nicht erlaubt und auch nicht notwendig. 
+  Bitte fangen Sie \emph{jede Aufgabe auf einem neuen Blatt} an. Unterschreiben Sie die Klausur einmal auf dem Deckblatt und einmal am Ende der Klausur.
+
+  \begin{center}
+    \large\textbf{Viel Erfolg!} 
+  \end{center}
+\end{remark}
+
+
+
+
+\raggedright
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Pop-Quiz \points{10}}
+\label{sec:popquiz}
+
+\begin{subex}
+  \item\points{2} Wann sind Vektoren $\vv_1,\ldots,\vv_N \in \RR^d$ linear unabhänging? Wann bilden sie eine Basis?
+  \item\points{2} Verschiebungen in der Ebene und der $\RR^n$ ($n \in \NN$) sind Beispiele für welche mathematische Struktur? Nennen Sie ein weiteres.
+  \item\points{2} Nenne Sie eine Definition der Ableitung einer Funktion $f\colon \RR \to \RR$ im Punkt $x_0 \in \RR$.
+  \item\points{2} Wie können Sie die Koeffizienten $a_k$ der Taylorreihe
+  \[
+    f(x) = \sum_{k=0}^\infty a_k (x - x_0)^k
+  \]
+  der Funktion $f\colon \RR \to \RR$ um den Punkt $x_0 \in \RR$ berechnen?
+  \item\points{2} Wie lautet die Polardarstellung der komplexen Zahl $z = a + \ii b$ für $a, b \in \RR$ mit $a > 0$ und $b > 0$?
+\end{subex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Gram-Schmidt Orthogonalisierung \points{10}}
+\label{sec:gram_schmidt_orthogonalisierung}
+
+Betrachte die folgenden Vektoren in $\RR^3$ gegeben durch ihre Komponenten bzgl. der Standardbasis:
+\[
+  \UU = \colvec{2 \\ 0 \\ 2}, \quad \VV = \colvec{1 \\ 1 \\ 1}, \quad{\WW} = \colvec{3 \\ 2 \\ 1}
+\]
+
+\begin{subex}
+  \item\points{2} Sind $\uu$, $\vv$, $\ww$ orthonormal? Sind sie orthogonal?
+  \item\points{5} Berechnen Sie die Komponenten der folgenden Vektoren bezüglich der Standardbasis
+  \begin{align*}
+    &\tilde\uu = \frac{\uu}{\Vert \uu \Vert} & \\
+    &\vv' = \vv - \langle \tilde \uu, \vv \rangle \tilde\uu 
+    &\tilde\vv = \frac{\vv'}{\Vert \vv' \Vert} \\
+    &\ww' = \ww - \langle \tilde \uu, \ww \rangle \tilde\uu - \langle \tilde \vv, \ww \rangle \tilde\vv 
+    &\tilde\ww = \frac{\ww'}{\Vert \ww' \Vert}
+  \end{align*}
+  \item\points{3} Zeigen Sie, dass $\tilde\uu$, $\tilde\vv$, $\tilde\ww$ orthonormal sind.
+\end{subex}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Differentiation \& Integration \points{15}}
+\label{sec:differentiation}
+
+Sei $f(x) = \cos x \log x^2$ und $g(x, y) = y \frac{1 - x}{1 + x}$ und $h(x) = \sin x \cos x$
+
+\begin{subex}
+  \item\points{4} Berechnen Sie $f'(x)$ und $f''(x)$.
+  \item\points{6} Berechnen Sie $\pderiv[g]{x}(x, y)$, $\pderiv[g]{y}(x, y)$ und $\frac{\partial^2 g}{\partial x \partial y}(x, y)$.
+  \item\points{5} Berechnen Sie \emph{die Fläche}, die $h$ im Intervall $[-\frac{\pi}{2}, \frac{\pi}{2}]$ mit der $x$-Achse einschließt.
+\end{subex} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Gaussintegral \points{5}}
+\label{sec:gaussintegral}
+
+Berechnen Sie das 1-dimensionale Gaussintegral
+\[
+  G = \int_{-\infty}^{\infty} \dd x \,  \ee^{-\frac{x^2}{2}} 
+\]
+\begin{remark}{Hinweis}
+  Schreiben Sie $G^2$ als 2D Integral über $(x, y)$ und führen Sie eine Transformation auf Polarkoordinaten $(r, \phi)$ durch. 
+\end{remark} 
+% Gaussintegral
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Komplexe Zahlen \points{10}}
+\label{sec:komplexe_zahlen}
+
+\begin{subex}
+  \item\points{5} Sei $z = \ee^{-\ii \frac{\pi}{4}}$ und $w = 2 + \ii$, berechnen Sie $z + w$, $zw$, $z(\bar{z} - w^2)$, $\frac{z}{w}$ und $z^3$. Geben Sie das Ergebnis in der Form $a + \ii b$ an, wobei $a, b \in \RR$.
+  \item\points{2} Skizzieren Sie $z_n = \ee^{-\ii \frac{\pi n}{4}}$ für $n \in \NN$ in der Gaussschen Zahlenebene. 
+  \item\points{3} Benutzen Sie Eulers Formel um die folgenden trigonometrischen Formeln zu beweisen
+  \[
+    \cos^2 x + \sin^2 x = 1 \quad\mbox{und}\quad \tan \frac{x}{2} = \frac{\sin x}{1 + \cos x}
+  \]
+\end{subex}
+
+
+\end{document}
