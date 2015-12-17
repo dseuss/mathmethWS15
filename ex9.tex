@@ -1,0 +1,64 @@
+\documentclass{scrartcl}
+\usepackage{mm_ws15}
+
+\newcommand{\sheetTitle}{Blatt 9, Abgabe 5.1.2016}
+\begin{document}
+\maketitle
+
+\vspace{\baselineskip}
+\emph{%
+  Beachten Sie, dass der Abgabetermin in der vorlesungesfreien Zeit liegt.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Horizontaler Wurf \points{4}}
+\label{sec:horizontaler_wurf}
+
+Ein Massepunkt der Masse $m$ wird aus der Höhe $h$ über dem Boden mit Anfangsgeschwindigkeit $\dot{\vec r}(0) = \deriv[\vec r]{t}(0) = v_0 \vec e_x$ horizontal geworfen. Unter Vernachlässigung der Reibung folgt aus den Newtonschen Bewegungsgleichungen für die Bahnkurve $\vec r(t)$
+\[
+  m \ddot{\vec r}(t) = m \frac{\dd^2 \vec r}{\dd t^2}(t) = \vec F_g = - m g \vec e_y.
+\]
+\begin{subex}
+  \item\points{3} Lösen Sie die Bewegungsgleichung für die angegebenen Anfangswerte. Dabei können Sie die $\vec e_z$ Richtung vernachlässigen und das Problem als Bewegung in 2D auffassen.
+  \item\points{1} Berechnen Sie den Auftreffpunkt auf den Boden. 
+\end{subex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Separation der Variablen \points{10}}
+\label{sec:separation_der_variablen}
+
+Lösen sie die folgenden Anfangswertprobleme mit der Methode der Separation der Variablen.
+
+\begin{subex}
+  \item\points{3} Unbeschränktes Wachstum $\deriv[N(t)]{t} = \beta N(t)$ mit $N(0) = N_0 > 0$ und $\beta > 0$.
+  \item\points{3} Beschränktes Wachstum $\deriv[N(t)]{t} = \beta N(t) - \alpha t N(t)$  mit $N(0) = N_0 > 0$ und $ \alpha, \beta > 0$.
+  \item\points{3} Barometrische Höhenformel: $\deriv[p(h)]{h} = - \frac{p(h) M g}{R(T_0 - ah)}$ mit $p(h_0) = p_0$ und $M, g, R > 0$.
+  \item\points{1} Skizzieren Sie die Lösungen von a) und b) und diskutieren Sie ihr Verhalten für kleine $t$ und $t \to \infty$.
+\end{subex}
+
+\begin{remark}{Hinweis}
+  Separation der Variablen ist eine Lösungmethode für Differentialgleichungen 1.\ Ordnung der Form
+  \[
+    \deriv[x(t)]{t} = g(t) h(x(t)).
+  \]
+  Die in der Vorlesung besprochenen Umformungen zur Lösung der DGL lassen sich gut als \quotes{Multiplikation mit $\dd t$} und anschließende Integration über $x$ und $t$ merken:
+    \[
+    \deriv[x(t)]{t} = g(t) h(x(t)) \implies \frac{\dd x}{h(x)} = g(t) \, \dd t \implies \int \frac{1}{h(x)}\,  \dd x = \int g(t) \, \dd t.
+  \]
+  Diese Regel soll aber nur als Gedankenstütze dienen, da Multiplikation mit $\dd t$ hier nicht mathematisch definiert ist.
+\end{remark}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Variation der Konstanten \points{6}}
+\label{sec:variation_der_konstanten}
+
+Lösen Sie die folgenden inhomogenen Differentialgleichungen.
+
+\begin{subex}
+  \item\points{3} $\deriv[x(t)]{t} + \alpha x(t) = \beta t$ für $t \ge 0$ mit $x(0) = 1$ und $\alpha, \beta > 0$.
+  \item\points{3} $t \deriv[y(t)]{t} + 2 y(t) = t^2 - t + 1$ für $t \ge 1$ mit $y(1) = 1$.
+\end{subex}
+
+\end{document}
