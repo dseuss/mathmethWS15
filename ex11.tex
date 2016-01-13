@@ -35,7 +35,7 @@ Die Brachistochrone für die Punkte $\vec x_1 = \colvec{0 \\ 0}$ und $\vec x_2 =
 \[
   \vec{\varphi}\colon [0, 2\pi] \to \RR^2, \, t \mapsto \vec\varphi(t) = \colvec{R (t - \sin t) \\ R (\cos t - 1)}.
 \]
-Skizzieren Sie die Kurve und zeigen Sie dass die Länge $8R$ beträgt. 
+Skizzieren Sie die Kurve und zeigen Sie, dass die Länge $8R$ beträgt. 
 Geben Sie eine Parametrisierung für den kürzesten Weg zwischen $\vec x_1$ und $\vec x_2$ an und berechnen Sie dessen Länge.
 \begin{remark}{Hinweis}
   Der kürzeste Weg zwischen zwei Punkten im euklidischen Raum ist die Strecke zwischen ihnen.
@@ -53,7 +53,7 @@ Ein Massepunkt der Masse $m$ bewegt sich in der Nähe der Erdoberfläche unter E
 mit $t \in [0,2]$.
 \begin{subex}
   \item Skizzieren Sie die Bahnkurve $\mathcal{D} = \{ \vec r(t) | t \in [0,2] \}$ sowie das Kraftfeld $F_\mathrm{G}$.
-  Berechnen Sie die für diese Bewegung aufzubringende Arbeit $W = - \int_\mathcal{D} \dd \vec r \dot \vec F(\vec r)$.
+  Berechnen Sie die für diese Bewegung aufzubringende Arbeit $W = - \int_\mathcal{D} \dd \vec r \cdot \vec F(\vec r)$.
   \item Aufgrund eines Gegenwindes in $x$-Richtung wirkt \emph{zusätzlich} die Kraft $\vec F_\mathrm{W} = - c \ee_x$. Welche Arbeit muss nun aufgebracht werden?
 \end{subex}
 
@@ -70,7 +70,7 @@ Betrachte die zwei Vektorfelder in $\RR^2$
   \item Betrachte die folgenden beiden Wege von $(0,0)$ nach $(1,2)$ (siehe auch untenstehende Skizze):
   $\gamma_1$ sei die Strecke zwischen den beiden Punkten und $\gamma_2$ der Parabelast, der durch die beiden Punkte verläuft, sowie in $(0,0)$ sein Minimum annimmt.
   Finden Sie jeweils eine geeignete Parametrisierung $\gamma_i(t)$.
-  \item Berechnen Sie das Wegintegral über $\vec F_1$ $\int_\gamma \dd \vec r \dot \vec F_1(\vec r)$ für $\Gamma_1$ und $\Gamma_2$.
+  \item Berechnen Sie das Wegintegral über $\vec F_1$ $\int_\gamma \dd \vec r \cdot \vec F_1(\vec r)$ für $\Gamma_1$ und $\Gamma_2$.
   Nutzen Sie jeweils die Parametrisierung aus a).
   \item Berechnen Sie nun die Wegintegrale über $\Gamma_1$ und $\Gamma_2$ für das Vektorfeld $\vec F_2$.
 \end{subex}
@@ -79,12 +79,19 @@ Betrachte die zwei Vektorfelder in $\RR^2$
   \begin{tikzpicture}[scale=1.5]
     \draw[gray,->] (-0.5,0) -- (1.5,0) node[below] {$x$};
     \draw[gray,->] (0,-0.5) -- (0,2.5) node[left] {$y$};
-    \draw[domain=0:1,smooth,variable=\x,line width=1] 
+    \draw[->,domain=0:1,smooth,variable=\x,line width=1] 
       plot ({\x} , {2*\x});
-    \draw[domain=0:1,smooth,variable=\x,line width=1] 
+    \node at (.3,1.1) {$\gamma_1$};
+    \draw[->,domain=0:1,smooth,variable=\x,line width=1] 
       plot ({\x} , {2*\x*\x});
+    \node at (.9,.9) {$\gamma_2$};
+
+    \node at (0,0) [circle,fill=black,inner sep=0,minimum size=4pt] {};
+    \node at (0,0) [anchor=north east] {$(0,0)$};
+    \node at (1,2) [circle,fill=black,inner sep=0,minimum size=4pt] {};
+    \node at (1,2) [anchor=south west] {$(1,2)$};
+
   \end{tikzpicture}
 \end{center}
-\todo{Labels \& Endpoints}
 
 \end{document}
