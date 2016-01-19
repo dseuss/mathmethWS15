@@ -16,7 +16,7 @@
   \item\points{2} An welchen Punkten ist der Gradient von $\mat V(\mat r) = x^3 + y^3 + z^3 - 3xyz$ senkrecht zur $x$-Achse?
   Wo ist er gleich 0?
   \item\points{2} Berechnen Sie $\nabla f(r)$ für $r = \sqrt{x^2 + y^2 + z^2}$ und eine einmal stetig differenzierbare Funktion $f$.
-  \item\points{2} Gegeben Sei das Potential $\phi(x, y, z) = \frac{1}{r}$ für $r = \sqrt{x^2 + y^2 + z^2}$. In welchen Raumpunkten $\mat r \in \RR^3$ gilt $\Vert \nabla \phi (\mat r) \Vert = 1$?
+  \item\points{2} Gegeben sei das Potential $\phi(x, y, z) = \frac{1}{r}$ für $r = \sqrt{x^2 + y^2 + z^2}$. In welchen Raumpunkten $\mat r \in \RR^3$ gilt $\Vert \nabla \phi (\mat r) \Vert = 1$?
 \end{subex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -24,7 +24,7 @@
 \label{sec:gradientenfelder1}
 
 In der Vorlesung haben Sie den Begriff des \emph{Gradientenfeldes} kennengelernt.
-Ein Gradientenfeld im $\RR^N$ ist eine Funktion $\mat V\colon \DD(\mat V) \to \RR^N$, für die es ein \emph{Potential} $\phi\colon \DD(\mat V) \to \RR$ gibt, sodass
+Ein Gradientenfeld im $\RR^N$ ist eine Funktion $\mat V\colon \DD(\mat V) \to \RR^N$, für die es ein \emph{Potential} $\phi\colon \DD(\mat V) \to \RR$ gibt, so dass
 \[
   \label{eq:potential}
   \tag{$\ast$}
@@ -57,7 +57,7 @@ Eine notwendige Bedingung, dass $\mat V$ ein Gradientenfeld ist sind die sogenan
 \label{sec:gradientenfelder2}
 
 Als nächstes betrachten wir eine wichtige Eigenschaft von Gradientenfeldern.
-Ein Vektorfeld $\mat V\colon \DD(\mat V) \to \RR^N$ heißt konservativ, wenn das Wegintegral $\int_\gamma \mat V(\mat r) \cdot \dd \mat r$ nur vom Anfangs- und Endpunkt von $\gamma$ abhängt.
+Ein Vektorfeld $\mat V\colon \DD(\mat V) \to \RR^N$ heißt konservativ, wenn das Wegintegral $\int_\gamma \mat \dd \mat r \cdot V(\mat r) $ nur vom Anfangs- und Endpunkt von $\gamma$ abhängt.
 
 Genauer: Betrachte Wege $\gamma_i\colon [0,1] \to \DD(\mat V)$ ($i=1,2$), die ganz in $\DD(\mat V)$ verlaufen und die gleichen Anfangs-/Endpunkte haben: 
 \[
@@ -65,9 +65,9 @@ Genauer: Betrachte Wege $\gamma_i\colon [0,1] \to \DD(\mat V)$ ($i=1,2$), die ga
 \]
 Dann gilt
 \[
-  \int_{\gamma_1} \mat V(\mat r) \cdot \dd \mat r = \int_{\gamma_2} \mat V(\mat r) \cdot \dd \mat r.
+  \int_{\gamma_1}  \dd \mat r \cdot  \mat V(\mat r) = \int_{\gamma_2} \dd \mat r \cdot \mat V(\mat r).
 \]
-Ein Vektorfeld ist genau dann konservativ, wenn es ein Gradientenfeld ist.
+Ein Vektorfeld ist dann und nur dann konservativ, wenn es ein Gradientenfeld ist. 
 \begin{subex}
   \item\points{6} Entscheiden Sie ob die Vektorfelder vom letzten Übungsblatt, Aufgabe 4 konservativ sind:
   \[
@@ -94,7 +94,7 @@ Ein Vektorfeld ist genau dann konservativ, wenn es ein Gradientenfeld ist.
 
 
 \begin{remark}{Bemerkung}
-  Die Umkehrung: $\mat V$ erfüllt Integrabilitätsbedinungen $\implies$ $\mat V$ Gradientenfeld gilt nur falls $\mat V$ einen einfach zusammenhängenden Definitionsbereich $\DD(\mat V)$ hat.
+  Die Umkehrung: $\mat V$ erfüllt Integrabilitätsbedingungen $\implies$ $\mat V$ Gradientenfeld gilt nur falls $\mat V$ einen einfach zusammenhängenden Definitionsbereich $\DD(\mat V)$ hat.
   Eine Menge $A \subset \RR^N$ heißt dabei \emph{einfach zusammenhängend}, wenn man jeden geschlossenen Weg (d.h. Anfangs- = Endpunkt) auf einen Punkt stetig zusammenziehen kann ohne $A$ dabei zu verlassen. Als Beispiel dienen die folgende Mengen im $\RR^2$:
 
   \begin{center}
@@ -118,8 +118,10 @@ Ein Vektorfeld ist genau dann konservativ, wenn es ein Gradientenfeld ist.
       \end{scope}
     \end{tikzpicture}
   \end{center}
-  Während $A$ einfach zusammenhängend ist, kann man bei $B$ die eingezeichnete Kurve $\gamma$ nicht auf einen Punkt zusammen ziehen, da sie das ``Loch'' innerhalb von $B$ umschließt. 
-  Natürlich gibt es auch in $B$ Kurven, die auf einen Punkt zusammenziehbar sind.
+  Während $A$ einfach zusammenhängend ist, kann man bei $B$ die eingezeichnete Kurve $\gamma$ nicht auf einen Punkt zusammen ziehen, da sie das ``Loch'' innerhalb von $B$ umschließt.
+  Natürlich gibt es auch in $B$ Kurven, die auf einen Punkt zusammenziehbar sind.\\
+
+  Überlegen Sie sich, warum das Vektorfeld $\mat V$ in b) zwar die Integrabilitätsbedingungen erfüllt, aber nach c) nicht konservativ ist.
 \end{remark}
 
 \end{document}
