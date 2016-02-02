@@ -84,4 +84,28 @@ Berechnen Sie die Geschwindigkeit $\mat v(t) = \deriv[\mat r]{t}(t)$ und Beschle
   \item $\mat r(t) = \colvec{R \cos \omega t \\ R \sin \omega t \\ v_z t}$
   \item $\mat r(t) = R \mathrm{e}^{-\eta t}$ \colvec{\cos \omega t \\ \sin \omega t \\ 0} 
 \end{subex*}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Kontinuitätsgleichung}
+\label{sec:kontinuit_tsgleichung}
+
+Erhaltungsgrößen spielen in der Physik eine zentrale Rolle.
+Als Beispiel betrachten wir eine Flüssigkeit beschrieben durch ihre Massendichte $\rho(\vec r, t)$ und Strömungsgeschwindigkeit $\vec v(\vec r, t)$ zur Zeit $t$ am Ort $\vec r$.
+Wenn die Flüssigkeitsteilchen lokal erhalten ist -- d.h.\ es wird keine Masse erzeugt oder vernichtet -- gilt für ein beliebiges Raumgebiet $\Omega \subset \mathbb{R}^3$ der Massenerhaltungssatz (hier in integraler Form)
+\[
+  \label{eq:kont}
+  \tag{$\ast$}
+  \deriv{t} \int_\Omega \dd V \, \rho(\vec r, t) + \int_{\partial \Omega} \dd \vec{S} \cdot \left( \rho(\vec r, t) \vec v(\vec r, t) \right) = 0.
+\]
+
+\begin{subex}
+  \item Erläutern Sie die Bedeutung der beiden Terme im Massenerhaltungssatz~\eqref{eq:kont}.
+  \item Nutzen Sie den Gaußschen Integralsatz und das Argument, dass \eqref{eq:kont} für beliebige Raumgebiete $\Omega$ gilt, um die differentielle Form des Massenerhaltungssatzes (auch Kontinuitätsgleichung genannt) herzuleiten:
+  \[
+    \deriv{t} \rho(\vec r, t) + \nabla \cdot (\rho(\vec r, t) \vec{v}(\vec r, t)) = 0.
+  \] 
+\end{subex}
 \end{document}
